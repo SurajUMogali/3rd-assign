@@ -1,0 +1,26 @@
+server:
+  port: 8192
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3307/appointmentdb
+    username: root
+  application:
+    name: appointment-service
+    
+  jpa:
+    show-sql: true
+    hibernate:
+        ddl-auto: update
+
+
+
+            
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - health
+        - prometheus             
