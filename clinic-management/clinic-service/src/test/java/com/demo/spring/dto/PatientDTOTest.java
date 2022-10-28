@@ -14,6 +14,8 @@ public class PatientDTOTest {
 		patientDTO.setEmail("johnwalker@gmail.com");
 		patientDTO.setPatientId(100);
 		
+		PatientDTO patientDTO2=new PatientDTO(100,"john","walker","johnwalker@gmail.com");
+		
 		assertEquals("john",patientDTO.getFirstName());
 		assertEquals("walker",patientDTO.getLastName());
 		assertEquals("johnwalker@gmail.com",patientDTO.getEmail());

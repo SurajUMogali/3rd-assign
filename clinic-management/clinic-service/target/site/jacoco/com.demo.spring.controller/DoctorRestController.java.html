@@ -23,21 +23,25 @@ import io.micrometer.core.annotation.Timed;
 	@Autowired
 	DoctorService doctorService;
 	
+	
+	@Timed(value = &quot;requests.doctor.list&quot;)
 	@GetMapping(path=&quot;/doctor/list&quot;,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;List&lt;Doctor&gt;&gt; listDoctorData() throws DoctorNotFoundException{
-<span class="fc" id="L28">		List&lt;Doctor&gt; doctorList = doctorService.listAllData();</span>
-<span class="fc bfc" id="L29" title="All 2 branches covered.">		if(doctorList.isEmpty()) {</span>
-<span class="fc" id="L30">			throw new DoctorNotFoundException();</span>
+<span class="fc" id="L30">		List&lt;Doctor&gt; doctorList = doctorService.listAllData();</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">		if(doctorList.isEmpty()) {</span>
+<span class="fc" id="L32">			throw new DoctorNotFoundException();</span>
 		}else {
-<span class="fc" id="L32">			return ResponseEntity.ok(doctorList);</span>
+<span class="fc" id="L34">			return ResponseEntity.ok(doctorList);</span>
 		}
 	}
 	
+	
+	@Timed(value = &quot;requests.docotor.findbyid&quot;)
 	@GetMapping(path = &quot;/doctor/find/{doctorId}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed(value = &quot;requests.count.findbyid&quot;)
 	public ResponseEntity&lt;Doctor&gt; findOneDoc(@PathVariable(&quot;doctorId&quot;) int doctorId) throws DoctorNotFoundException {
 
-<span class="nc" id="L40">		return doctorService.findOneDocService(doctorId);</span>
+<span class="fc" id="L44">		return doctorService.findOneDocService(doctorId);</span>
 
 	}
 	

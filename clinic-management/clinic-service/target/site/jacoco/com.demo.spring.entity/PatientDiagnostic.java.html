@@ -13,8 +13,8 @@ import javax.persistence.Table;
 public class PatientDiagnostic {
 
 	@Id
-	@SequenceGenerator(sequenceName = &quot;DoctorSpeciality_sequence&quot;, initialValue = 5, name = &quot;DoctorSpeciality_Id&quot;)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = &quot;DoctorSpeciality_Id&quot;)
+	@SequenceGenerator(sequenceName = &quot;PatientDiagnostic_sequence&quot;, initialValue = 5, name = &quot;PatientDiagnostic_Id&quot;)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = &quot;PatientDiagnostic_Id&quot;)
 
 	@Column(name = &quot;ID&quot;)
 	private Integer id;
@@ -28,10 +28,10 @@ public class PatientDiagnostic {
 <span class="fc" id="L28">	}</span>
 
 	public PatientDiagnostic(Integer patientID, Integer diagnosticID) {
-<span class="nc" id="L31">		super();</span>
-<span class="nc" id="L32">		PatientID = patientID;</span>
-<span class="nc" id="L33">		DiagnosticID = diagnosticID;</span>
-<span class="nc" id="L34">	}</span>
+<span class="fc" id="L31">		super();</span>
+<span class="fc" id="L32">		PatientID = patientID;</span>
+<span class="fc" id="L33">		DiagnosticID = diagnosticID;</span>
+<span class="fc" id="L34">	}</span>
 
 	public PatientDiagnostic(Integer id, Integer patientID, Integer diagnosticID) {
 <span class="nc" id="L37">		super();</span>
@@ -41,7 +41,7 @@ public class PatientDiagnostic {
 <span class="nc" id="L41">	}</span>
 
 	public Integer getId() {
-<span class="nc" id="L44">		return id;</span>
+<span class="fc" id="L44">		return id;</span>
 	}
 
 	public void setId(Integer id) {

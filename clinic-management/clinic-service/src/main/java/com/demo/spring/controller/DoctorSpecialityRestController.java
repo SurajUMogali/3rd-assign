@@ -20,6 +20,8 @@ import com.demo.spring.exceptions.DoctorSpecialityNotFoundException;
 import com.demo.spring.services.DoctorSpecialityService;
 import com.demo.spring.util.Message;
 
+import io.micrometer.core.annotation.Timed;
+
 @RestController
 @RequestMapping("/clinic")
 public class DoctorSpecialityRestController {
@@ -27,6 +29,7 @@ public class DoctorSpecialityRestController {
 	@Autowired
 	DoctorSpecialityService specialityService;
 
+	@Timed(value = "requests.speciality.findbyid")
 	@GetMapping(path = "/speciality/list/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Doctor>> listAllDoctor(@PathVariable("id") Integer id) throws DoctorSpecialityNotFoundException, DoctorNotFoundException {
 		List<Doctor> doctorList =specialityService.listDoctorInSpeciality(id);
@@ -38,12 +41,14 @@ public class DoctorSpecialityRestController {
 		
 	}
 	
+	@Timed(value = "requests.speciality.addDoctor")
 	@PostMapping(path="/speciality/addDoctor" ,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Message> addDoctorToSpeciality(@RequestBody DoctorSpecialityDTO doctorSpecialityDTO) throws DoctorNotFoundException{
  
         return ResponseEntity.ok(specialityService.addDoctorService(doctorSpecialityDTO));
     }
 	
+	@Timed(value = "requests.speciality.remove")
 	@DeleteMapping(path = "/speciality/removeDoctor/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Message> removeDoctor(@PathVariable("id") Integer id) throws DoctorNotFoundException {
 		return ResponseEntity.ok(specialityService.removeDoctor(id));

@@ -12,7 +12,7 @@ import com.demo.spring.entity.Message;
     
         @ExceptionHandler(PatientNotExistsException.class)
         public ResponseEntity&lt;Message&gt; noAppointment(PatientNotExistsException ex){
-<span class="nc" id="L15">            return ResponseEntity.ok(new Message(&quot;No Patient Found&quot;));</span>
+<span class="fc" id="L15">            return ResponseEntity.ok(new Message(&quot;No Patient Found&quot;));</span>
 }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

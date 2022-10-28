@@ -20,6 +20,8 @@ import com.demo.spring.exceptions.DiagnosticTestExistsException;
 import com.demo.spring.services.DiagnosticService;
 import com.demo.spring.util.Message;
 
+import io.micrometer.core.annotation.Timed;
+
 @RestController
 @RequestMapping("/clinic")
 public class DiagnosticRestController {
@@ -27,16 +29,20 @@ public class DiagnosticRestController {
 	@Autowired
 	DiagnosticService diagnosticService;
 	
+	
+	@Timed(value = "requests.diagnostic.list")
 	@GetMapping(path="/diagnostic/list", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Diagnostic>> listAllDiagnostics() {
 			return ResponseEntity.ok(diagnosticService.listAll());
 	}
 	
+	@Timed(value = "requests.diagnostic.addtest")
 	@PostMapping(path="/diagnostic/addTest" ,consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Message> addTest(@RequestBody DiagnosticDTO diagnosticDto) throws DiagnosticTestExistsException{
 		return ResponseEntity.ok(diagnosticService.addTests(diagnosticDto));
 	}
 	
+	@Timed(value = "requests.diagnostic.delete")
 	@DeleteMapping(path="/diagnostic/removeTest/{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Message> removeTest(@PathVariable("id") Integer id) throws DiagnosticNotFoundException{
 		return ResponseEntity.ok(diagnosticService.removeTests(id));

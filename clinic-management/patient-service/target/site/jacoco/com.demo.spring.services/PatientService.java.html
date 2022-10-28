@@ -20,7 +20,7 @@ import com.demo.spring.repository.PatientRepository;
 	@Autowired
 	PatientRepository patientRepository;
 
-	public ResponseEntity&lt;Patient&gt; findOneEmpService(int patientId) throws PatientNotExistsException {
+	public ResponseEntity&lt;Patient&gt; findOnePatService(int patientId) throws PatientNotExistsException {
 <span class="fc" id="L24">		Optional&lt;Patient&gt; patOp = patientRepository.findById(patientId);</span>
 <span class="fc bfc" id="L25" title="All 2 branches covered.">		if (patOp.isPresent()) {</span>
 <span class="fc" id="L26">			return ResponseEntity.ok(patOp.get());</span>

@@ -20,26 +20,32 @@ import com.demo.spring.exceptions.DiagnosticTestExistsException;
 import com.demo.spring.services.DiagnosticService;
 import com.demo.spring.util.Message;
 
+import io.micrometer.core.annotation.Timed;
+
 @RestController
 @RequestMapping(&quot;/clinic&quot;)
-<span class="fc" id="L25">public class DiagnosticRestController {</span>
+<span class="fc" id="L27">public class DiagnosticRestController {</span>
 
 	@Autowired
 	DiagnosticService diagnosticService;
 	
+	
+	@Timed(value = &quot;requests.diagnostic.list&quot;)
 	@GetMapping(path=&quot;/diagnostic/list&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;List&lt;Diagnostic&gt;&gt; listAllDiagnostics() {
-<span class="fc" id="L32">			return ResponseEntity.ok(diagnosticService.listAll());</span>
+<span class="fc" id="L36">			return ResponseEntity.ok(diagnosticService.listAll());</span>
 	}
 	
+	@Timed(value = &quot;requests.diagnostic.addtest&quot;)
 	@PostMapping(path=&quot;/diagnostic/addTest&quot; ,consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;Message&gt; addTest(@RequestBody DiagnosticDTO diagnosticDto) throws DiagnosticTestExistsException{
-<span class="fc" id="L37">		return ResponseEntity.ok(diagnosticService.addTests(diagnosticDto));</span>
+<span class="fc" id="L42">		return ResponseEntity.ok(diagnosticService.addTests(diagnosticDto));</span>
 	}
 	
+	@Timed(value = &quot;requests.diagnostic.delete&quot;)
 	@DeleteMapping(path=&quot;/diagnostic/removeTest/{id}&quot; , produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;Message&gt; removeTest(@PathVariable(&quot;id&quot;) Integer id) throws DiagnosticNotFoundException{
-<span class="fc" id="L42">		return ResponseEntity.ok(diagnosticService.removeTests(id));</span>
+<span class="fc" id="L48">		return ResponseEntity.ok(diagnosticService.removeTests(id));</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

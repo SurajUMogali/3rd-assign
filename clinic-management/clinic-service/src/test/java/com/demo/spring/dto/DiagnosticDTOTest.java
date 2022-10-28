@@ -10,6 +10,8 @@ public class DiagnosticDTOTest {
 		DiagnosticDTO diagnosticDTO = new DiagnosticDTO();
 		diagnosticDTO.setDiagnosticId(1);
 		diagnosticDTO.setDiagnosticName("Biopsy");
+		
+		DiagnosticDTO diagnosticDTO2 = new DiagnosticDTO(1,"Biopsy");
 
 		assertEquals(1, diagnosticDTO.getDiagnosticId());
 		assertEquals("Biopsy", diagnosticDTO.getDiagnosticName());

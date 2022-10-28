@@ -37,12 +37,13 @@ public class PatientRestController {
 
 	@GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed(value = "requests.count.findbyid")
-	public ResponseEntity<Patient> findOneEmp(@PathVariable("id") int patientId) throws PatientNotExistsException {
+	public ResponseEntity<Patient> findOnePat(@PathVariable("id") int patientId) throws PatientNotExistsException {
 
-		return patientService.findOneEmpService(patientId);
+		return patientService.findOnePatService(patientId);
 
 	}
-
+ 
+	@Timed(value = "requests.count.save")
 	@PostMapping(path = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Message> savePatient(@RequestBody PatientDTO patientDTO) {
 
@@ -55,6 +56,7 @@ public class PatientRestController {
 //		return ResponseEntity.ok(patientRepository.findAllByFirstName(fname));
 //	}
 
+	@Timed(value = "requests.count.findbyname")
 	@GetMapping(path = "/list/{fname}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Patient>> listByPatientName(@PathVariable("fname") String fname)
 			throws PatientNotFoundException {
@@ -63,6 +65,7 @@ public class PatientRestController {
 
 	}
 
+	@Timed(value = "requests.count.update")
 	@PatchMapping(path = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Message> updatePatient(@RequestBody PatientDTO patientDto) {
 		if (patientRepository.existsById(patientDto.getPatientId())) {

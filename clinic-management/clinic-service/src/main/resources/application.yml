@@ -13,4 +13,19 @@ spring:
       ddl-auto: update
   application:
     name: clinic-service
+    
+eureka:
+  client:
+    register-with-eureka: true
+    service-url : 
+      defaultZone : ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+    
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - health
+        - prometheus    
 

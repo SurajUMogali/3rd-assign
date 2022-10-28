@@ -9,6 +9,9 @@ public class DoctorDTOTest {
 	@Test
 	void testDoctorDTO() {
 		DoctorDTO doctorDTO = new DoctorDTO();
+		
+		DoctorDTO doctorDTO2 = new DoctorDTO(101,"suraj","mogali","surajmogali@gmail.com");
+		
 		doctorDTO.setFirstName("suraj");
 		doctorDTO.setLastName("mogali");
 		doctorDTO.setEmail("surajmogali@gmail.com");

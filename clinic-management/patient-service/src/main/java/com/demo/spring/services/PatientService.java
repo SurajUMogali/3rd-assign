@@ -20,7 +20,7 @@ public class PatientService {
 	@Autowired
 	PatientRepository patientRepository;
 
-	public ResponseEntity<Patient> findOneEmpService(int patientId) throws PatientNotExistsException {
+	public ResponseEntity<Patient> findOnePatService(int patientId) throws PatientNotExistsException {
 		Optional<Patient> patOp = patientRepository.findById(patientId);
 		if (patOp.isPresent()) {
 			return ResponseEntity.ok(patOp.get());

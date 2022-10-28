@@ -20,33 +20,38 @@ import com.demo.spring.exceptions.DoctorSpecialityNotFoundException;
 import com.demo.spring.services.DoctorSpecialityService;
 import com.demo.spring.util.Message;
 
+import io.micrometer.core.annotation.Timed;
+
 @RestController
 @RequestMapping(&quot;/clinic&quot;)
-<span class="fc" id="L25">public class DoctorSpecialityRestController {</span>
+<span class="fc" id="L27">public class DoctorSpecialityRestController {</span>
 
 	@Autowired
 	DoctorSpecialityService specialityService;
 
+	@Timed(value = &quot;requests.speciality.findbyid&quot;)
 	@GetMapping(path = &quot;/speciality/list/{id}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;List&lt;Doctor&gt;&gt; listAllDoctor(@PathVariable(&quot;id&quot;) Integer id) throws DoctorSpecialityNotFoundException, DoctorNotFoundException {
-<span class="fc" id="L32">		List&lt;Doctor&gt; doctorList =specialityService.listDoctorInSpeciality(id);</span>
-<span class="pc bpc" id="L33" title="1 of 2 branches missed.">		if(doctorList.isEmpty()) {</span>
-<span class="nc" id="L34">			throw new DoctorSpecialityNotFoundException();</span>
+<span class="fc" id="L35">		List&lt;Doctor&gt; doctorList =specialityService.listDoctorInSpeciality(id);</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if(doctorList.isEmpty()) {</span>
+<span class="nc" id="L37">			throw new DoctorSpecialityNotFoundException();</span>
 		}else {
-<span class="fc" id="L36">			return ResponseEntity.ok(doctorList);</span>
+<span class="fc" id="L39">			return ResponseEntity.ok(doctorList);</span>
 		}
 		
 	}
 	
+	@Timed(value = &quot;requests.speciality.addDoctor&quot;)
 	@PostMapping(path=&quot;/speciality/addDoctor&quot; ,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity&lt;Message&gt; addDoctorToSpeciality(@RequestBody DoctorSpecialityDTO doctorSpecialityDTO) throws DoctorNotFoundException{
  
-<span class="fc" id="L44">        return ResponseEntity.ok(specialityService.addDoctorService(doctorSpecialityDTO));</span>
+<span class="fc" id="L48">        return ResponseEntity.ok(specialityService.addDoctorService(doctorSpecialityDTO));</span>
     }
 	
+	@Timed(value = &quot;requests.speciality.remove&quot;)
 	@DeleteMapping(path = &quot;/speciality/removeDoctor/{id}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;Message&gt; removeDoctor(@PathVariable(&quot;id&quot;) Integer id) throws DoctorNotFoundException {
-<span class="fc" id="L49">		return ResponseEntity.ok(specialityService.removeDoctor(id));</span>
+<span class="fc" id="L54">		return ResponseEntity.ok(specialityService.removeDoctor(id));</span>
 	}
 
 }

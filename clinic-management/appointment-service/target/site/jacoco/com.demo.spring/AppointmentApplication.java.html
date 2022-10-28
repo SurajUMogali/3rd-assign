@@ -2,6 +2,8 @@
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -10,26 +12,25 @@ import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 
-
-<span class="fc" id="L15">public class AppointmentApplication {</span>
+<span class="fc" id="L17">public class AppointmentApplication {</span>
 
 	public static void main(String[] args) {
-<span class="nc" id="L18">		SpringApplication.run(AppointmentApplication.class, args);</span>
-<span class="nc" id="L19">	}</span>
+<span class="nc" id="L20">		SpringApplication.run(AppointmentApplication.class, args);</span>
+<span class="nc" id="L21">	}</span>
 
 	@Bean
 	public OpenAPI openApiDoc() {
-<span class="fc" id="L23">		return new OpenAPI().info(new Info().description(&quot;Mock prject on ABC&quot;)</span>
-<span class="fc" id="L24">				.license(new License().name(&quot;Free for All&quot;)).title(&quot;Mock Project Document&quot;).version(&quot;1.0.0-BETA&quot;));</span>
+<span class="fc" id="L25">		return new OpenAPI().info(new Info().description(&quot;Mock prject on ABC&quot;)</span>
+<span class="fc" id="L26">				.license(new License().name(&quot;Free for All&quot;)).title(&quot;Mock Project Document&quot;).version(&quot;1.0.0-BETA&quot;));</span>
+	}
+
+	@Bean
+	RestTemplate restTemplate() {
+<span class="fc" id="L31">		return new RestTemplate();</span>
 	}
 	
-	@Bean
-    RestTemplate restTemplate() {
-<span class="fc" id="L29">        return new RestTemplate();</span>
-    }
 	
-	
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

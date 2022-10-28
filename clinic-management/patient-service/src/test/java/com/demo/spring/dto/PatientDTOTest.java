@@ -10,6 +10,9 @@ public class PatientDTOTest {
 	
 	@Test
 	void testPatientDTO() {
+		
+		PatientDTO patient=new PatientDTO(100,"john","walker","johnwalker@gmail.com");
+		
 		PatientDTO patientDTO=new PatientDTO();
 		patientDTO.setFirstName("john");
 		patientDTO.setLastName("walker");

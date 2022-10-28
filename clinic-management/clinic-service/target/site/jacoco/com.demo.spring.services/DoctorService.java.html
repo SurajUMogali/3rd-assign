@@ -23,11 +23,11 @@ import com.demo.spring.repository.DoctorRepository;
 	}
 	
 	public ResponseEntity&lt;Doctor&gt; findOneDocService(int doctorId) throws DoctorNotFoundException {
-<span class="nc" id="L26">		Optional&lt;Doctor&gt; docOp = doctorRepository.findById(doctorId);</span>
-<span class="nc bnc" id="L27" title="All 2 branches missed.">		if (docOp.isPresent()) {</span>
-<span class="nc" id="L28">			return ResponseEntity.ok(docOp.get());</span>
+<span class="fc" id="L26">		Optional&lt;Doctor&gt; docOp = doctorRepository.findById(doctorId);</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">		if (docOp.isPresent()) {</span>
+<span class="fc" id="L28">			return ResponseEntity.ok(docOp.get());</span>
 		} else {
-<span class="nc" id="L30">			throw new DoctorNotFoundException();</span>
+<span class="fc" id="L30">			throw new DoctorNotFoundException();</span>
 
 		}
 

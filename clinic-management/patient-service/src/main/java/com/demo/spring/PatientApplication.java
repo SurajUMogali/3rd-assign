@@ -11,7 +11,7 @@ import io.swagger.v3.oas.models.info.License;
 
 @SpringBootApplication
 
-
+@EnableDiscoveryClient
 public class PatientApplication {
 
 	public static void main(String[] args) {

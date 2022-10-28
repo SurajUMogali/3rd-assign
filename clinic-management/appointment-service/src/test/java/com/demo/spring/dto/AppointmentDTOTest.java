@@ -4,13 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.demo.spring.dto.AppointmentDTO;
-
 public class AppointmentDTOTest {
 	
 	@Test
 	void testAppointmentDTO() {
 		AppointmentDTO appointmentDto=new AppointmentDTO();
+		
+		AppointmentDTO appointmentDto2=new AppointmentDTO(2,201,101,"2022-10-20");
+		
 		appointmentDto.setAppointmentId(2);
 		appointmentDto.setDate("2022-10-20");
 		appointmentDto.setDoctorId(101);

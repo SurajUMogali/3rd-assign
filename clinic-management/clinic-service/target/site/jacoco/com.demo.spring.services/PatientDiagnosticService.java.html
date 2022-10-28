@@ -41,11 +41,11 @@ import com.demo.spring.util.ServerConfiguration;
 
 
    public Message addTestToPatient(int patientId,int testId) throws DiagnosticNotFoundException {
-<span class="nc" id="L44">       Optional&lt;Diagnostic&gt; diagnosticOp=diagnosticRepository.findById(testId);</span>
-<span class="nc bnc" id="L45" title="All 2 branches missed.">       if(diagnosticOp.isPresent()) {</span>
-<span class="nc" id="L46">           PatientDiagnostic patientDiagnostic=new PatientDiagnostic(testId,patientId);</span>
-<span class="nc" id="L47">           patientDiagnosticRepository.save(patientDiagnostic);</span>
-<span class="nc" id="L48">           return new Message(&quot;Test added successfully&quot;);</span>
+<span class="fc" id="L44">       Optional&lt;Diagnostic&gt; diagnosticOp=diagnosticRepository.findById(testId);</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">       if(diagnosticOp.isPresent()) {</span>
+<span class="fc" id="L46">           PatientDiagnostic patientDiagnostic=new PatientDiagnostic(testId,patientId);</span>
+<span class="fc" id="L47">           patientDiagnosticRepository.save(patientDiagnostic);</span>
+<span class="fc" id="L48">           return new Message(&quot;Test added successfully&quot;);</span>
        }else {
 <span class="nc" id="L50">           throw new DiagnosticNotFoundException();</span>
        }

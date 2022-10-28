@@ -23,6 +23,8 @@ public class DoctorRestController {
 	@Autowired
 	DoctorService doctorService;
 	
+	
+	@Timed(value = "requests.doctor.list")
 	@GetMapping(path="/doctor/list",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Doctor>> listDoctorData() throws DoctorNotFoundException{
 		List<Doctor> doctorList = doctorService.listAllData();
@@ -33,6 +35,8 @@ public class DoctorRestController {
 		}
 	}
 	
+	
+	@Timed(value = "requests.docotor.findbyid")
 	@GetMapping(path = "/doctor/find/{doctorId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed(value = "requests.count.findbyid")
 	public ResponseEntity<Doctor> findOneDoc(@PathVariable("doctorId") int doctorId) throws DoctorNotFoundException {

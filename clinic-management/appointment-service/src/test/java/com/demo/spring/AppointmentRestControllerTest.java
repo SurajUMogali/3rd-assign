@@ -54,7 +54,7 @@ public class AppointmentRestControllerTest {
 		List<Appointment> list = new ArrayList<>();
 		list.add(new Appointment(6, 106, 206, "2022-10-17"));
 		when(appointmentRepo.findAllByDate(106, "2022-10-17")).thenReturn(list);
-		mvc.perform(get("/appointment/list/106/2022-10-17")).andDo(print()).andExpect(status().isOk())
+		mvc.perform(get("/appointment/listbyDate/106/2022-10-17")).andDo(print()).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(content()
 						.json("[ {'appointmentId': 6,'doctorId': 106,'patientId': 206,'date': '2022-10-17'}]"));
 
@@ -66,7 +66,7 @@ public class AppointmentRestControllerTest {
          
          when(appointmentRepo.findAllByDate(106,"2022-10-17")).thenReturn(list);
          
-         mvc.perform(get("/appointment/list/106/2022-10-17"))
+         mvc.perform(get("/appointment/listbyDate/106/2022-10-17"))
              .andDo(print())
              .andExpect(status().isOk())
              .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -104,6 +104,8 @@ public class AppointmentRestControllerTest {
 //				.andExpect(jsonPath("$.status").value("Appointment already exists"));
 //
 //	}
+	 
+	 
 	
 	
 

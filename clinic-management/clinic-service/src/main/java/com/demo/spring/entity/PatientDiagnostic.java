@@ -13,8 +13,8 @@ import javax.persistence.Table;
 public class PatientDiagnostic {
 
 	@Id
-	@SequenceGenerator(sequenceName = "DoctorSpeciality_sequence", initialValue = 5, name = "DoctorSpeciality_Id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DoctorSpeciality_Id")
+	@SequenceGenerator(sequenceName = "PatientDiagnostic_sequence", initialValue = 5, name = "PatientDiagnostic_Id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PatientDiagnostic_Id")
 
 	@Column(name = "ID")
 	private Integer id;

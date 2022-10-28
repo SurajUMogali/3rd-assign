@@ -36,13 +36,17 @@ public class AppointmentRestController {
 
 	@Autowired
 	AppointmentService appointmentService;
+	
+	
 
+	@Timed(value = "requests.count.list")
 	@GetMapping(path = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Appointment>> findAllAppointments() {
 		return (appointmentService.findAllAppointmentsService());
 	}
 
-	@GetMapping(path = "/list/{doctorID}/{date}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@Timed(value = "requests.count.listbydate")
+	@GetMapping(path = "/listbyDate/{doctorID}/{date}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Appointment>> findAppointmentsByDate(@PathVariable("doctorID") int doctorID,
 			@PathVariable("date") String date) throws AppointmentNotFoundException {
 		return appointmentService.findAppointmentsByDateService(doctorID, date);
@@ -76,16 +80,17 @@ public class AppointmentRestController {
 	@PostMapping(path = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@Timed(value = "request.add.appointment")
 	public ResponseEntity<Message> addAppointment(@RequestBody AppointmentDTO appointmentDTO)
-			throws PatientNotExistsException, DoctorNotFoundException{
-		PatientDTO patientDTO = restTemplate.getForEntity(server.getPatientServer() + "/patient/{id}",
-				PatientDTO.class, appointmentDTO.getPatientId()).getBody();
-		System.out.println(server.getPatientServer() + "/patient/{id}");
+			throws PatientNotExistsException, DoctorNotFoundException, NullPointerException {
+		PatientDTO patientDTO = restTemplate.getForEntity(server.getPatientServer() + "/patient/{id}", PatientDTO.class,
+				appointmentDTO.getPatientId()).getBody();
 
-		if (patientDTO != null && patientDTO.getPatientId()!=null && patientDTO.getPatientId().equals(appointmentDTO.getPatientId())) {
+		if (patientDTO != null && patientDTO.getPatientId() != null
+				&& patientDTO.getPatientId().equals(appointmentDTO.getPatientId())) {
 			DoctorDTO doctorDTO = restTemplate.getForEntity(server.getClinicServer() + "/clinic/doctor/find/{doctorId}",
 					DoctorDTO.class, appointmentDTO.getDoctorId()).getBody();
-			System.out.println(doctorDTO.getDoctorId());
-			if (doctorDTO != null && doctorDTO.getDoctorId()!=null && doctorDTO.getDoctorId().equals(appointmentDTO.getDoctorId())){
+
+			if (doctorDTO != null && doctorDTO.getDoctorId() != null
+					&& doctorDTO.getDoctorId().equals(appointmentDTO.getDoctorId())) {
 				return appointmentService.getAppointmentService(appointmentDTO);
 			} else {
 				throw new DoctorNotFoundException();

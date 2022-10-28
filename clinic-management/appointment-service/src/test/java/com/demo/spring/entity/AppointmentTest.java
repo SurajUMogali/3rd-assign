@@ -11,6 +11,9 @@ public class AppointmentTest {
 	@Test
 	void testAppointmentDTO() {
 		Appointment appointment=new Appointment();
+		
+		Appointment appointment2=new Appointment(2,201,101,"2022-10-20");
+		
 		appointment.setAppointmentId(2);
 		appointment.setDate("2022-10-20");
 		appointment.setDoctorId(101);

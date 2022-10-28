@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import com.demo.spring.dto.DoctorSpecialityDTO;
+
 public class DoctorSpecialityTest {
 	
 	@Test
@@ -11,6 +13,8 @@ public class DoctorSpecialityTest {
 		DoctorSpeciality doctorSpeciality = new DoctorSpeciality();
 		doctorSpeciality.setDoctorId(101);
 		doctorSpeciality.setSpecialityId(2);
+		
+		DoctorSpecialityDTO doctorSpecialityDTO2= new DoctorSpecialityDTO(101,2);
 
 		assertEquals(101, doctorSpeciality.getDoctorId());
 		assertEquals(2, doctorSpeciality.getSpecialityId());
