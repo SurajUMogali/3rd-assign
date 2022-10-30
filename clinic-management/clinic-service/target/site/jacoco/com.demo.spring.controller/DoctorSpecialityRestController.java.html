@@ -2,6 +2,8 @@
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,35 +26,54 @@ import io.micrometer.core.annotation.Timed;
 
 @RestController
 @RequestMapping(&quot;/clinic&quot;)
-<span class="fc" id="L27">public class DoctorSpecialityRestController {</span>
+<span class="fc" id="L29">public class DoctorSpecialityRestController {</span>
+	
+<span class="fc" id="L31">	private Logger logger = LogManager.getLogger(this.getClass().getName());</span>
 
 	@Autowired
 	DoctorSpecialityService specialityService;
 
+	/**
+	 * this method will return list of doctor by specilaityId
+	 * @param id
+	 * @return
+	 * @throws DoctorSpecialityNotFoundException
+	 * @throws DoctorNotFoundException
+	 */
 	@Timed(value = &quot;requests.speciality.findbyid&quot;)
 	@GetMapping(path = &quot;/speciality/list/{id}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;List&lt;Doctor&gt;&gt; listAllDoctor(@PathVariable(&quot;id&quot;) Integer id) throws DoctorSpecialityNotFoundException, DoctorNotFoundException {
-<span class="fc" id="L35">		List&lt;Doctor&gt; doctorList =specialityService.listDoctorInSpeciality(id);</span>
-<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if(doctorList.isEmpty()) {</span>
-<span class="nc" id="L37">			throw new DoctorSpecialityNotFoundException();</span>
+<span class="fc" id="L46">		List&lt;Doctor&gt; doctorList =specialityService.listDoctorInSpeciality(id);</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">		if(doctorList.isEmpty()) {</span>
+<span class="nc" id="L48">			throw new DoctorSpecialityNotFoundException();</span>
 		}else {
-<span class="fc" id="L39">			return ResponseEntity.ok(doctorList);</span>
+<span class="fc" id="L50">			logger.info(&quot;The method had called the service to list the speciality by specialityId&quot;);</span>
+<span class="fc" id="L51">			return ResponseEntity.ok(doctorList);</span>
 		}
 		
 	}
 	
+	/**
+	 * this method will add the doctor to specialityId
+	 * @param doctorSpecialityDTO
+	 * @return
+	 * @throws DoctorNotFoundException
+	 */
 	@Timed(value = &quot;requests.speciality.addDoctor&quot;)
 	@PostMapping(path=&quot;/speciality/addDoctor&quot; ,consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity&lt;Message&gt; addDoctorToSpeciality(@RequestBody DoctorSpecialityDTO doctorSpecialityDTO) throws DoctorNotFoundException{
+		
+<span class="fc" id="L66">		logger.info(&quot;The method had called the service to add Doctors to Speciality&quot;);</span>
  
-<span class="fc" id="L48">        return ResponseEntity.ok(specialityService.addDoctorService(doctorSpecialityDTO));</span>
+<span class="fc" id="L68">        return ResponseEntity.ok(specialityService.addDoctorService(doctorSpecialityDTO));</span>
     }
 	
 	@Timed(value = &quot;requests.speciality.remove&quot;)
-	@DeleteMapping(path = &quot;/speciality/removeDoctor/{id}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity&lt;Message&gt; removeDoctor(@PathVariable(&quot;id&quot;) Integer id) throws DoctorNotFoundException {
-<span class="fc" id="L54">		return ResponseEntity.ok(specialityService.removeDoctor(id));</span>
-	}
+	@DeleteMapping(path = &quot;/speciality/removeDoctor/{doctorId}/{specialityId}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity&lt;Message&gt; removeDoctorFromSpeciality(@PathVariable(&quot;doctorId&quot;) Integer doctorId,@PathVariable(&quot;specialityId&quot;) Integer specialityId) throws DoctorSpecialityNotFoundException {
+<span class="fc" id="L74">        return ResponseEntity.ok(specialityService.removeDoctorFromSpecialityService(doctorId,specialityId));</span>
+    }
+	
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

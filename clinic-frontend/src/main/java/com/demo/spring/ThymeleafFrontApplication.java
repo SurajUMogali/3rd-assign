@@ -22,6 +22,9 @@ public class ThymeleafFrontApplication implements WebMvcConfigurer {
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
+		
+		registry.addViewController("/login/home").setViewName("home");
+		
 		registry.addViewController("patientfind").setViewName("findPatient");
 		registry.addViewController("patientsave").setViewName("savePatient");
 		registry.addViewController("patientlist").setViewName("listPatient");
@@ -38,6 +41,29 @@ public class ThymeleafFrontApplication implements WebMvcConfigurer {
         registry.addViewController("/diagnostic/list").setViewName("listDiagnostic");
         registry.addViewController("/diagnostic/delete1").setViewName("deleteDiagnostic");
         registry.addViewController("/diagnostic").setViewName("homeDiagnostic");
+        
+        registry.addViewController("/doctor/find").setViewName("findDoctor");
+        registry.addViewController("/doctor/list").setViewName("listDoctor");
+        registry.addViewController("/doctor").setViewName("homeDoctor");
+        
+        registry.addViewController("/doctorSpeciality/list").setViewName("listDoctorSpeciality");
+        registry.addViewController("/doctorSpeciality/add").setViewName("saveDoctorSpeciality");
+        registry.addViewController("/doctorSpeciality/remove").setViewName("deleteDoctorSpeciality");
+        
+        registry.addViewController("/diagnostic/addTestPatient").setViewName("saveDiagnosticPatient");
+        
+        registry.addViewController("/error").setViewName("error");
+        
+        registry.addViewController("/").setViewName("login");
+        
+        registry.addViewController("/findPatientfailure").setViewName("findPatientfailure");
+        
+        
+        
+        
+        
+        
+        
 		
 		
 		
@@ -62,10 +88,7 @@ public class ThymeleafFrontApplication implements WebMvcConfigurer {
 	}
 	
 	
-	
-	
-	
-	
+
 	
 	
 	

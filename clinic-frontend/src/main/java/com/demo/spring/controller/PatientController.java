@@ -53,12 +53,24 @@ public class PatientController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 		HttpEntity<Void> req = new HttpEntity<>(headers);
-		ResponseEntity<List<PatientDTO>> response = restTemplate.exchange(
+		
+		String str= restTemplate.exchange(
 				"http://localhost:8194/patient/list/" + firstName, HttpMethod.GET, req,
-				new ParameterizedTypeReference<List<PatientDTO>>() {
-				});
-		mv.addObject("patientList", response.getBody());
-		mv.setViewName("listPatient");
+				String.class).getBody();
+		System.out.println(str);
+		if (str!= null && str.equals("{\"status\":\"No Patient Found\"}")) {
+			mv.addObject("response", "No Patient Found" );
+			mv.setViewName("listPatient");
+        } else {
+        	ResponseEntity<List<PatientDTO>> response = restTemplate.exchange(
+    				"http://localhost:8194/patient/list/" + firstName, HttpMethod.GET, req,
+    				new ParameterizedTypeReference<List<PatientDTO>>() {
+    				});
+            
+            mv.addObject("patientList", response.getBody());
+            mv.setViewName("listPatient");
+        }
+		
 		return mv;
 	}
 
@@ -84,10 +96,22 @@ public class PatientController {
 		HttpEntity<PatientDTO> req = new HttpEntity<>(patientDTO, headers);
 		ResponseEntity<String> response = restTemplate.exchange("http://localhost:8194/patient/update",
 				HttpMethod.PATCH, req, String.class);
+		if (response.getBody()!= null) {
+			mv.addObject("msg", response.getBody());
+			mv.setViewName("updatePatientsuccess");
+			
+        } else {
+        	ResponseEntity<String> response2 = restTemplate.exchange("http://localhost:8194/patient/update",
+    				HttpMethod.PATCH, req, String.class);
+           
+            mv.addObject("msg", response2.getBody());
+            mv.setViewName("updatePatientfailure");
+        }
 		
-		mv.addObject("msg", response.getBody());
-		mv.setViewName("updatePatientsuccess");
 		return mv;
+		
+		
+		
 	}
 
 }

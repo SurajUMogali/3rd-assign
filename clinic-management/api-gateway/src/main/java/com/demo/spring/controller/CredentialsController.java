@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.spring.dto.CredentialsDTO;
 import com.demo.spring.entity.Credentials;
-import com.demo.spring.exceptions.UserNameExistsException;
 import com.demo.spring.exceptions.UserNotFoundException;
 import com.demo.spring.services.CredentialsService;
 import com.demo.spring.util.Message;
@@ -60,17 +57,5 @@ public class CredentialsController {
 
 
 
-   @PostMapping(path = "/addUser", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Message> addUser(@RequestBody CredentialsDTO credentialsDTO) throws UserNameExistsException {
-        Credentials credential = new Credentials(credentialsDTO.getUserName(), credentialsDTO.getPassword());
-        return ResponseEntity.ok(credentialsService.addUserService(credential));
-    }
-
-
-
-   @DeleteMapping(path = "/removeUser/{userName}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Message> removeUser(@PathVariable("userName") String userName)
-            throws UserNotFoundException {
-        return ResponseEntity.ok(credentialsService.removeUserService(userName));
-    }
+   
 }

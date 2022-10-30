@@ -26,8 +26,12 @@ public class ApiGatewayApplication {
 		String patientServer = uriConfiguration.getPatientServer();
 		String appointmentServer = uriConfiguration.getAppointmentServer();
 		String clinicServer = uriConfiguration.getClinicServer();
+		
 		return builder.routes().route(p -> p.path("/patient/**").uri(patientServer))
 				.route(p -> p.path("/appointment/**").uri(appointmentServer))
 				.route(p -> p.path("/clinic/**").uri(clinicServer)).build();
+				
+		
+		        
 	}
 }

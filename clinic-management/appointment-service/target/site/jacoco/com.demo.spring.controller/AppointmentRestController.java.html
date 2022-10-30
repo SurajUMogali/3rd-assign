@@ -2,6 +2,8 @@
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.MediaType;
@@ -32,7 +34,9 @@ import io.swagger.v3.oas.annotations.OpenAPI30;
 @EnableConfigurationProperties(ServerConfiguration.class)
 @RequestMapping(&quot;/appointment&quot;)
 @OpenAPI30
-<span class="fc" id="L35">public class AppointmentRestController {</span>
+<span class="fc" id="L37">public class AppointmentRestController {</span>
+	
+<span class="fc" id="L39">	private Logger logger = LogManager.getLogger(this.getClass().getName());</span>
 
 	@Autowired
 	AppointmentService appointmentService;
@@ -42,14 +46,17 @@ import io.swagger.v3.oas.annotations.OpenAPI30;
 	@Timed(value = &quot;requests.count.list&quot;)
 	@GetMapping(path = &quot;/list&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;List&lt;Appointment&gt;&gt; findAllAppointments() {
-<span class="fc" id="L45">		return (appointmentService.findAllAppointmentsService());</span>
+<span class="fc" id="L49">		logger.info(&quot;This method had called the service to list appointments&quot;);</span>
+<span class="fc" id="L50">		return (appointmentService.findAllAppointmentsService());</span>
 	}
 
 	@Timed(value = &quot;requests.count.listbydate&quot;)
-	@GetMapping(path = &quot;/list/{doctorID}/{date}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = &quot;/listbyDate/{doctorID}/{date}&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity&lt;List&lt;Appointment&gt;&gt; findAppointmentsByDate(@PathVariable(&quot;doctorID&quot;) int doctorID,
 			@PathVariable(&quot;date&quot;) String date) throws AppointmentNotFoundException {
-<span class="fc" id="L52">		return appointmentService.findAppointmentsByDateService(doctorID, date);</span>
+<span class="fc" id="L57">		logger.info(&quot;This method had called the service to list Appointments by date&quot;);</span>
+		
+<span class="fc" id="L59">		return appointmentService.findAppointmentsByDateService(doctorID, date);</span>
 	}
 
 //    @PostMapping(path = &quot;/save&quot;, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -81,23 +88,28 @@ import io.swagger.v3.oas.annotations.OpenAPI30;
 	@Timed(value = &quot;request.add.appointment&quot;)
 	public ResponseEntity&lt;Message&gt; addAppointment(@RequestBody AppointmentDTO appointmentDTO)
 			throws PatientNotExistsException, DoctorNotFoundException, NullPointerException {
-<span class="fc" id="L84">		PatientDTO patientDTO = restTemplate.getForEntity(server.getPatientServer() + &quot;/patient/{id}&quot;, PatientDTO.class,</span>
-<span class="fc" id="L85">				appointmentDTO.getPatientId()).getBody();</span>
+		
+<span class="fc" id="L92">		logger.info(&quot;This method had called the service to save appointments&quot;);</span>
+		
+<span class="fc" id="L94">		PatientDTO patientDTO = restTemplate.getForEntity(server.getPatientServer() + &quot;/patient/{id}&quot;, PatientDTO.class,</span>
+<span class="fc" id="L95">				appointmentDTO.getPatientId()).getBody();</span>
 
-<span class="pc bpc" id="L87" title="2 of 4 branches missed.">		if (patientDTO != null &amp;&amp; patientDTO.getPatientId() != null</span>
-<span class="fc bfc" id="L88" title="All 2 branches covered.">				&amp;&amp; patientDTO.getPatientId().equals(appointmentDTO.getPatientId())) {</span>
-<span class="fc" id="L89">			DoctorDTO doctorDTO = restTemplate.getForEntity(server.getClinicServer() + &quot;/clinic/doctor/find/{doctorId}&quot;,</span>
-<span class="fc" id="L90">					DoctorDTO.class, appointmentDTO.getDoctorId()).getBody();</span>
+<span class="pc bpc" id="L97" title="2 of 4 branches missed.">		if (patientDTO != null &amp;&amp; patientDTO.getPatientId() != null</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">				&amp;&amp; patientDTO.getPatientId().equals(appointmentDTO.getPatientId())) {</span>
+<span class="fc" id="L99">			DoctorDTO doctorDTO = restTemplate.getForEntity(server.getClinicServer() + &quot;/clinic/doctor/find/{doctorId}&quot;,</span>
+<span class="fc" id="L100">					DoctorDTO.class, appointmentDTO.getDoctorId()).getBody();</span>
 
-<span class="pc bpc" id="L92" title="2 of 4 branches missed.">			if (doctorDTO != null &amp;&amp; doctorDTO.getDoctorId() != null</span>
-<span class="fc bfc" id="L93" title="All 2 branches covered.">					&amp;&amp; doctorDTO.getDoctorId().equals(appointmentDTO.getDoctorId())) {</span>
-<span class="fc" id="L94">				return appointmentService.getAppointmentService(appointmentDTO);</span>
+<span class="pc bpc" id="L102" title="2 of 4 branches missed.">			if (doctorDTO != null &amp;&amp; doctorDTO.getDoctorId() != null</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">					&amp;&amp; doctorDTO.getDoctorId().equals(appointmentDTO.getDoctorId())) {</span>
+<span class="fc" id="L104">				return appointmentService.getAppointmentService(appointmentDTO);</span>
 			} else {
-<span class="fc" id="L96">				throw new DoctorNotFoundException();</span>
+<span class="fc" id="L106">				logger.error(&quot;Exception : Doctor Not Found Exception&quot;);</span>
+<span class="fc" id="L107">				throw new DoctorNotFoundException();</span>
 			}
 
 		} else {
-<span class="fc" id="L100">			throw new PatientNotExistsException();</span>
+<span class="fc" id="L111">			logger.error(&quot;Exception : Patient Not Found Exception&quot;);</span>
+<span class="fc" id="L112">			throw new PatientNotExistsException();</span>
 		}
 
 	}

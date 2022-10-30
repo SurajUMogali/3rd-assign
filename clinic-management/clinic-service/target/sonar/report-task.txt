@@ -2,5 +2,5 @@ projectKey=com.demo:clinic-service
 serverUrl=http://localhost:9099
 serverVersion=9.6.1.59531
 dashboardUrl=http://localhost:9099/dashboard?id=com.demo%3Aclinic-service
-ceTaskId=AYQa0hV-LUSQOV8eTOBn
-ceTaskUrl=http://localhost:9099/api/ce/task?id=AYQa0hV-LUSQOV8eTOBn
+ceTaskId=AYQq1nefkgHoo9fNKdPM
+ceTaskUrl=http://localhost:9099/api/ce/task?id=AYQq1nefkgHoo9fNKdPM

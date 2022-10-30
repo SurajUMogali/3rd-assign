@@ -73,27 +73,5 @@ class CredentialsControllerTest {
 		Assertions.assertEquals("User Not Found", resp2.getBody().getStatus());
 	}
 
-	@Test
-	void testaddUserFailure() throws Exception {
-		Credentials credentials = new Credentials("shreyas", "4321");
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.set("Content-type", MediaType.APPLICATION_JSON_VALUE);
-		HttpEntity<Credentials> req = new HttpEntity<>(credentials, headers);
-		ResponseEntity<Message> resp2 = testRestTemplate.exchange("http://localhost:" + port + "/login/addUser",
-				HttpMethod.POST, req, Message.class);
-		Assertions.assertEquals("User Already Exists", resp2.getBody().getStatus());
-	}
-
-	@Test
-	void testaddUserSuccess() throws Exception {
-		Credentials credentials = new Credentials("harsha", "4321");
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.set("Content-type", MediaType.APPLICATION_JSON_VALUE);
-		HttpEntity<Credentials> req = new HttpEntity<>(credentials, headers);
-		ResponseEntity<Message> resp2 = testRestTemplate.exchange("http://localhost:" + port + "/login/addUser",
-				HttpMethod.POST, req, Message.class);
-		Assertions.assertEquals("User Already Exists", resp2.getBody().getStatus());
-	}
+	
 }

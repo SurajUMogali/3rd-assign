@@ -3,6 +3,8 @@
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -12,22 +14,29 @@ import com.demo.spring.exceptions.DoctorNotFoundException;
 import com.demo.spring.repository.DoctorRepository;
 
 @Service
-<span class="fc" id="L15">public class DoctorService {</span>
+<span class="fc" id="L17">public class DoctorService {</span>
+	
+<span class="fc" id="L19">	private Logger logger = LogManager.getLogger(this.getClass().getName());</span>
 
 	
 	@Autowired
 	DoctorRepository doctorRepository;
 	
 	public List&lt;Doctor&gt; listAllData(){
-<span class="fc" id="L22">		return doctorRepository.findAll();</span>
+		
+<span class="fc" id="L27">		logger.info(&quot;Doctor Service: List all the Doctors&quot;);</span>
+		
+<span class="fc" id="L29">		return doctorRepository.findAll();</span>
 	}
 	
 	public ResponseEntity&lt;Doctor&gt; findOneDocService(int doctorId) throws DoctorNotFoundException {
-<span class="fc" id="L26">		Optional&lt;Doctor&gt; docOp = doctorRepository.findById(doctorId);</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">		if (docOp.isPresent()) {</span>
-<span class="fc" id="L28">			return ResponseEntity.ok(docOp.get());</span>
+<span class="fc" id="L33">		Optional&lt;Doctor&gt; docOp = doctorRepository.findById(doctorId);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">		if (docOp.isPresent()) {</span>
+<span class="fc" id="L35">			logger.info(&quot;Docotor Service: Find the Doctors by doctorId&quot;);</span>
+<span class="fc" id="L36">			return ResponseEntity.ok(docOp.get());</span>
 		} else {
-<span class="fc" id="L30">			throw new DoctorNotFoundException();</span>
+<span class="fc" id="L38">			logger.error(&quot;Docotor Service: Exception : Doctor Not Found Exception&quot;);</span>
+<span class="fc" id="L39">			throw new DoctorNotFoundException();</span>
 
 		}
 

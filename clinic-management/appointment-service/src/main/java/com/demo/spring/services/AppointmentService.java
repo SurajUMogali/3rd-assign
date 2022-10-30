@@ -2,6 +2,8 @@ package com.demo.spring.services;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,18 +16,24 @@ import com.demo.spring.repository.AppointmentRepository;
 
 @Service
 public class AppointmentService {
+	
+	private Logger logger = LogManager.getLogger(this.getClass().getName());
 
 	@Autowired
 	AppointmentRepository appointmentRepository;
 
 	public ResponseEntity<List<Appointment>> findAllAppointmentsService() {
+		logger.info("Appointment Service: List all the appointments");
 		return ResponseEntity.ok(appointmentRepository.findAll());
 	}
 
 	public ResponseEntity<List<Appointment>> findAppointmentsByDateService(int doctorID, String date)
 			throws AppointmentNotFoundException {
 		List<Appointment> listAppointment = appointmentRepository.findAllByDate(doctorID, date);
+		logger.info("Appointment Service: List the appointments based on date");
 		if (listAppointment.isEmpty()) {
+			
+			logger.error("Appointment Service: Exception : Appointment Not Found Exception");
 			throw new AppointmentNotFoundException();
 		} else {
 			return ResponseEntity.ok(listAppointment);
@@ -33,7 +41,9 @@ public class AppointmentService {
 	}
 
 	public ResponseEntity<Message> getAppointmentService(AppointmentDTO appointmentDTO) {
+		logger.info("Appointment Service: List the appointments based on date");
 		if (appointmentRepository.existsById(appointmentDTO.getAppointmentId())) {
+			
 			return ResponseEntity.ok(new Message("Appointment already exists"));
 		} else {
 			Appointment appointment = new Appointment(appointmentDTO.getAppointmentId(), appointmentDTO.getDoctorId(),

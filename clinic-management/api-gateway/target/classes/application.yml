@@ -5,7 +5,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root
-    url: jdbc:mysql://localhost:3307/clinicdb
+    url: jdbc:mysql://localhost:3307/credentialdb
     username: root
   jpa:
     show-sql: true

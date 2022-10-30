@@ -16,7 +16,7 @@ public class DoctorTest {
 		doctor.setEmail("surajmogali@gmail.com");
 		doctor.setDoctorId(101);
 		
-		DoctorDTO doctorDTO2 = new DoctorDTO(101,"suraj","mogali","surajmogali@gmail.com");
+		Doctor doctorDTO2 = new Doctor(101,"suraj","mogali","surajmogali@gmail.com");
 
 		assertEquals("suraj", doctor.getFirstName());
 		assertEquals("mogali", doctor.getLastName());

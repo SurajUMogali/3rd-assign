@@ -11,5 +11,12 @@ public interface DoctorSpecialityRepository extends JpaRepository<DoctorSpeciali
 
 	@Query("select d from DoctorSpeciality d where d.specialityId=:specialityId")
 	public List<DoctorSpeciality> findAllDoctor(Integer specialityId);
+	
+	@Query("select d from DoctorSpeciality d where d.doctorId=:doctorId and d.specialityId=:specialityId")
+    public List<DoctorSpeciality> findByDoctorIdAndSpecialityId(Integer doctorId,Integer specialityId);
+	
+
+	
+	
 
 }

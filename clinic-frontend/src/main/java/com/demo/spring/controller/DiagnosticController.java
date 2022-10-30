@@ -58,7 +58,7 @@ public class DiagnosticController {
             ResponseEntity<String> response = restTemplate.exchange("http://localhost:8194/clinic/diagnostic/removeTest/" +diagnosticId,
                     HttpMethod.DELETE, req, String.class);
             mv.addObject("msg", response.getBody());
-            mv.setViewName("findpatientfailure");
+            mv.setViewName("findPatientfailure");
             System.out.println(response.getBody());
         return mv;
 
@@ -73,8 +73,9 @@ public class DiagnosticController {
         HttpEntity<DiagnosticDTO> req = new HttpEntity<>(diagnosticDTO, headers);
         ResponseEntity<String> response = restTemplate.exchange("http://localhost:8194/clinic/diagnostic/addTest", HttpMethod.POST,
                 req, String.class);
-        mv.setViewName("savepatientsuccess");
-        mv.addObject("response", response.getBody());
+        
+        mv.addObject("msg", response.getBody());
+        mv.setViewName("saveDiagnosticsuccess");
         return mv;
     }
 }

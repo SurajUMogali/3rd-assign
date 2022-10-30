@@ -14,7 +14,7 @@ public class DoctorSpecialityTest {
 		doctorSpeciality.setDoctorId(101);
 		doctorSpeciality.setSpecialityId(2);
 		
-		DoctorSpecialityDTO doctorSpecialityDTO2= new DoctorSpecialityDTO(101,2);
+		DoctorSpeciality doctorSpecialityDTO2= new DoctorSpeciality(101,2);
 
 		assertEquals(101, doctorSpeciality.getDoctorId());
 		assertEquals(2, doctorSpeciality.getSpecialityId());

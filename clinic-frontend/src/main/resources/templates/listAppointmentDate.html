@@ -48,10 +48,12 @@ th, td {
 </head>
 <body style="background-color: #FEC5C1; text-align: center">
     <form action="listByDate" method="get">
-        <span>Enter doctorID</span> <input type="text" name="doctorId"><br>
-        <span>Enter date</span> <input type="text" name="date"><br>
+        <span>Enter doctorID</span> <input type="text" name="doctorId" required><br>
+        <span>Enter date</span> <input type="text" name="date" required><br>
         <input type="submit" name="Find">
     </form>
+    <div th:text="${response}"
+                            style="background-color: rgba(255, 0, 0, 0.2); max-width: 50%; margin-left: 15%; text-align: center"></div>
     <div th:each="appointment:${appointmentList}">
         <table class="table table-success table-stripped"
             style="max-width: 70%; margin-left: 20%">

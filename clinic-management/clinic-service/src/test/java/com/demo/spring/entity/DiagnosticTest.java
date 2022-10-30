@@ -13,7 +13,7 @@ public class DiagnosticTest {
 		diagnostic.setDiagnosticId(1);
 		diagnostic.setDiagnosticName("Biopsy");
 		
-		DiagnosticDTO diagnosticDTO2 = new DiagnosticDTO(1,"Biopsy");
+		Diagnostic diagnosticDTO2 = new Diagnostic(1,"Biopsy");
 
 		assertEquals(1, diagnostic.getDiagnosticId());
 		assertEquals("Biopsy", diagnostic.getDiagnosticName());

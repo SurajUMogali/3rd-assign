@@ -1,5 +1,7 @@
 package com.demo.spring.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,8 @@ import io.micrometer.core.annotation.Timed;
 @RestController
 @RequestMapping("/clinic")
 public class PatientDiagnosticRestController {
+	
+	private Logger logger = LogManager.getLogger(this.getClass().getName());
 	@Autowired
 	PatientDiagnosticService patientDiagnosticService;
 
@@ -31,6 +35,15 @@ public class PatientDiagnosticRestController {
 	@Autowired
 	RestTemplate restTemplate;
 
+	/**
+	 * this method will save the patient to diagnosticTest
+	 * @param testId
+	 * @param patientId
+	 * @return
+	 * @throws PatientNotFoundException
+	 * @throws DiagnosticNotFoundException
+	 * @throws NullPointerException
+	 */
 	@Timed(value = "requests.patientdiag.save")
 	@PostMapping(path = "/patientDiagnostic/save/{testId}/{patientId}")
 	public ResponseEntity<Message> addTestToPatient(@PathVariable("testId") int testId,
@@ -40,8 +53,11 @@ public class PatientDiagnosticRestController {
 				.getForEntity(server.getPatientServer() + "/patient/{patientId}", PatientDTO.class, patientId)
 				.getBody();
 		if (patientDTO!=null && patientDTO.getPatientId() != null && patientDTO.getPatientId() == patientId) {
+			logger.info("The method had called the service to to save the diagnosticTest to patient");
 			return ResponseEntity.ok(patientDiagnosticService.addTestToPatient(patientId, testId));
 		} else {
+			logger.error("PatientDiagnostic Service: Exception : Patient Not Found Exception");
+			
 			throw new PatientNotFoundException();
 		}
 	}

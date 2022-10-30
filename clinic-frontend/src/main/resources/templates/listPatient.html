@@ -8,13 +8,22 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 crossorigin="anonymous">
 <meta charset="ISO-8859-1">
 <title>List All Patients</title>
+
+
+<style>
+body { 
+    background-color: #B0C4DE;
+    }
+</style>
 </head>
 <body>
 <form action="listP" method="get">
 <span>Enter Patient FirstName</span>
-<input type="text" name=firstName><br>
+<input type="text" name=firstName required><br>
 <input type="submit" name="Find Patient FirstName">
 </form>
+<div th:text="${response}"
+                            style="background-color: rgba(255, 0, 0, 0.2); max-width: 50%; margin-left: 15%; text-align: center"></div>
 <div>
     <table class="table table-success table-striped" style="max-width: 70%;margin-left:15%" >
         <tr>

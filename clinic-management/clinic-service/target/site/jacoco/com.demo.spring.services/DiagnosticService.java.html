@@ -3,6 +3,8 @@
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,32 +16,39 @@ import com.demo.spring.repository.DiagnosticRepository;
 import com.demo.spring.util.Message;
 
 @Service
-<span class="fc" id="L17">public class DiagnosticService {</span>
+<span class="fc" id="L19">public class DiagnosticService {</span>
+	
+<span class="fc" id="L21">	private Logger logger = LogManager.getLogger(this.getClass().getName());</span>
 	
 	@Autowired
 	DiagnosticRepository diagnosticRepository;
 	
 	public List&lt;Diagnostic&gt; listAll(){
-<span class="fc" id="L23">		return diagnosticRepository.findAll();</span>
+<span class="fc" id="L27">		logger.info(&quot;Diagnostic Service: List the diagnostic tests&quot;);</span>
+<span class="fc" id="L28">		return diagnosticRepository.findAll();</span>
 	}
 	
 	public Message addTests(DiagnosticDTO diagnosticDTO) throws DiagnosticTestExistsException {
-<span class="fc bfc" id="L27" title="All 2 branches covered.">		if(diagnosticRepository.existsById(diagnosticDTO.getDiagnosticId())) {</span>
-<span class="fc" id="L28">			throw new DiagnosticTestExistsException();</span>
+<span class="fc" id="L32">		logger.info(&quot;Diagnostic Service: Add the diagnostic tests&quot;);</span>
+		
+<span class="fc bfc" id="L34" title="All 2 branches covered.">		if(diagnosticRepository.existsById(diagnosticDTO.getDiagnosticId())) {</span>
+<span class="fc" id="L35">			throw new DiagnosticTestExistsException();</span>
 		}else {
-<span class="fc" id="L30">			Diagnostic diagnostic = new Diagnostic(diagnosticDTO.getDiagnosticId(), diagnosticDTO.getDiagnosticName());</span>
-<span class="fc" id="L31">			diagnosticRepository.save(diagnostic);</span>
-<span class="fc" id="L32">			return new Message(&quot;Test added&quot;);</span>
+<span class="fc" id="L37">			Diagnostic diagnostic = new Diagnostic(diagnosticDTO.getDiagnosticId(), diagnosticDTO.getDiagnosticName());</span>
+<span class="fc" id="L38">			diagnosticRepository.save(diagnostic);</span>
+<span class="fc" id="L39">			return new Message(&quot;Test added&quot;);</span>
 		}
 	}
 	
 	public Message removeTests(Integer id) throws DiagnosticNotFoundException {
-<span class="fc" id="L37">		Optional&lt;Diagnostic&gt; diagnostic = diagnosticRepository.findById(id);</span>
-<span class="fc bfc" id="L38" title="All 2 branches covered.">		if(diagnostic.isPresent()) {</span>
-<span class="fc" id="L39">			diagnosticRepository.delete(diagnostic.get());</span>
-<span class="fc" id="L40">			return new Message(&quot;Test removed from test list&quot;);</span>
+<span class="fc" id="L44">		logger.info(&quot;Diagnostic Service: Delete the diagnostic tests&quot;);</span>
+<span class="fc" id="L45">		Optional&lt;Diagnostic&gt; diagnostic = diagnosticRepository.findById(id);</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">		if(diagnostic.isPresent()) {</span>
+<span class="fc" id="L47">			diagnosticRepository.delete(diagnostic.get());</span>
+<span class="fc" id="L48">			return new Message(&quot;Test removed from test list&quot;);</span>
 		}else {
-<span class="fc" id="L42">			throw new DiagnosticNotFoundException();</span>
+<span class="fc" id="L50">			logger.error(&quot;Diagnostic Service: Exception :Diagnostic Not Found Exception&quot;);</span>
+<span class="fc" id="L51">			throw new DiagnosticNotFoundException();</span>
 		}
 	}
 

@@ -105,25 +105,30 @@ class DoctorSpecialityRestControllerTest {
 	}
 	
 	@Test
-	void testRemoveDoctor() throws Exception {
-		when(repository.findById(101)).thenReturn(Optional.of(doctorSpeciality));
-		
-		mvc.perform(delete("/clinic/speciality/removeDoctor/101"))
-			.andDo(print())
-			.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-			.andExpect(jsonPath("$.status").value("Doctor remove from speciality"));
-	}
+    void testRemoveDoctorSuccess() throws Exception {
+        DoctorSpeciality doctorSpeciality = new DoctorSpeciality(105, 5);
+        List<DoctorSpeciality> doctorSpecialityList = new ArrayList<>();
+        doctorSpecialityList.add(doctorSpeciality);
+        when(repository.findByDoctorIdAndSpecialityId(105, 5)).thenReturn(doctorSpecialityList);
 
-	@Test
-	void testRemoveDoctorfailure() throws Exception {
-		when(repository.findById(101)).thenReturn(Optional.empty());
-		
-		mvc.perform(delete("/clinic/speciality/removeDoctor/101"))
-			.andDo(print())
-			.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-			.andExpect(jsonPath("$.status").value("Doctor data is not available"));
-	}
+
+
+       mvc.perform(delete("/clinic/speciality/removeDoctor/105/5")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(jsonPath("$.status").value("Doctor Removed from Speciality"));
+    }
+
+
+
+   @Test
+    void testRemoveDoctorfailure() throws Exception {
+        when(repository.findById(101)).thenReturn(Optional.empty());
+
+
+
+       mvc.perform(delete("/clinic/speciality/removeDoctor/101/4")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(jsonPath("$.status").value("Doctor do not have speciality"));
+    }
 
 }

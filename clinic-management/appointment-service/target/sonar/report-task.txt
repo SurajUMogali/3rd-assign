@@ -2,5 +2,5 @@ projectKey=com.demo:appointment-service
 serverUrl=http://localhost:9099
 serverVersion=9.6.1.59531
 dashboardUrl=http://localhost:9099/dashboard?id=com.demo%3Aappointment-service
-ceTaskId=AYQaz0d6LUSQOV8eTOBm
-ceTaskUrl=http://localhost:9099/api/ce/task?id=AYQaz0d6LUSQOV8eTOBm
+ceTaskId=AYQoAhhZkgHoo9fNKdPL
+ceTaskUrl=http://localhost:9099/api/ce/task?id=AYQoAhhZkgHoo9fNKdPL

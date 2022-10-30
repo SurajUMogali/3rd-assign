@@ -12,8 +12,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
         private String patientServer = "http://localhost:8191";
         private String appointmentServer = "http://localhost:8192";
         private String clinicServer = "http://localhost:8193";
+       
         
-        public String getPatientServer() {
+   
+		public String getPatientServer() {
             return patientServer;
         }
         public void setPatientServer(String patientServer) {
