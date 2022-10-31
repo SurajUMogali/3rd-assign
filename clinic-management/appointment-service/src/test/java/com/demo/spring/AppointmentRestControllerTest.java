@@ -78,35 +78,7 @@ public class AppointmentRestControllerTest {
 
 
 	
-//
-//	@Test
-//	void testcreateAppointmentServiceSuccess() throws Exception {
-//		Appointment appointment = new Appointment(6, 106, 206, "2022-10-17");
-//		ObjectMapper mapper = new ObjectMapper();
-//		String appointmentJson = mapper.writeValueAsString(appointment);
-//		when(appointmentRepo.existsById(6)).thenReturn(false);
-//		mvc.perform(post("/appointment/save").content(appointmentJson).contentType(MediaType.APPLICATION_JSON_VALUE))
-//				.andDo(print()).andExpect(status().isOk())
-//				.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-//				.andExpect(jsonPath("$.status").value("Appointment saved"));
-//
-//	}
-//
-//	@Test
-//	void testcreateAppointmentServiceFailure() throws Exception {
-//		Appointment appointment = new Appointment(6, 106, 206, "2022-10-17");
-//		ObjectMapper mapper = new ObjectMapper();
-//		String appointmentJson = mapper.writeValueAsString(appointment);
-//		when(appointmentRepo.existsById(6)).thenReturn(true);
-//		mvc.perform(post("/appointment/save").content(appointmentJson).contentType(MediaType.APPLICATION_JSON_VALUE))
-//				.andDo(print()).andExpect(status().isOk())
-//				.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-//				.andExpect(jsonPath("$.status").value("Appointment already exists"));
-//
-//	}
-	 
-	 
-	
+
 	
 
 }

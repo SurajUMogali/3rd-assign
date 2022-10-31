@@ -1,5 +1,14 @@
 package com.demo.spring.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AppointmentDTO {
 	private Integer appointmentId;
 	
@@ -9,51 +18,6 @@ public class AppointmentDTO {
 	
 	private String date;
 
-	public AppointmentDTO() {
-		super();
-	}
-
-	public AppointmentDTO(Integer appointmentId, Integer doctorId, Integer patientId, String date) {
-		super();
-		this.appointmentId = appointmentId;
-		this.doctorId = doctorId;
-		this.patientId = patientId;
-		this.date = date;
-	}
-
-	public Integer getAppointmentId() {
-		return appointmentId;
-	}
-
-	public void setAppointmentId(Integer appointmentId) {
-		this.appointmentId = appointmentId;
-	}
-
-	public Integer getDoctorId() {
-		return doctorId;
-	}
-
-	public void setDoctorId(Integer doctorId) {
-		this.doctorId = doctorId;
-	}
-
-	public Integer getPatientId() {
-		return patientId;
-	}
-
-	public void setPatientId(Integer patientId) {
-		this.patientId = patientId;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	
 	
 	
 }

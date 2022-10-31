@@ -6,19 +6,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = &quot;PATIENT&quot;)
+@Table(name = &quot;patient&quot;)
 public class Patient {
 	@Id
-	@Column(name = &quot;PATIENT_ID&quot;)
+	@Column(name = &quot;patient_id&quot;)
 	private Integer patientId;
 
-	@Column(name = &quot;FIRST_NAME&quot;)
+	@Column(name = &quot;first_name&quot;)
 	private String firstName;
 
-	@Column(name = &quot;LAST_NAME&quot;)
+	@Column(name = &quot;last_name&quot;)
 	private String lastName;
 
-	@Column(name = &quot;EMAIL&quot;)
+	@Column(name = &quot;email&quot;)
 	private String email;
 
 <span class="fc" id="L24">	public Patient() {</span>

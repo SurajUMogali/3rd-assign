@@ -9,9 +9,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties
     public class ServerConfiguration  {
         
-        private String patientServer = "http://localhost:8191";
-        private String appointmentServer = "http://localhost:8192";
-        private String clinicServer = "http://localhost:8193";
+        private String patientServer = "http://localhost:8194";
+        private String appointmentServer = "http://localhost:8194";
+        private String clinicServer = "http://localhost:8194";
         
         public String getPatientServer() {
             return patientServer;

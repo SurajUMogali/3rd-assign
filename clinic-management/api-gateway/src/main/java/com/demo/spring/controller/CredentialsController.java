@@ -2,6 +2,8 @@ package com.demo.spring.controller;
 
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.MediaType;
@@ -28,6 +30,7 @@ import io.swagger.v3.oas.annotations.OpenAPI30;
 @RequestMapping("/login")
 @EnableConfigurationProperties(ServerConfiguration.class)
 public class CredentialsController {
+	private Logger logger = LogManager.getLogger(this.getClass().getName());
 
 
 
@@ -36,10 +39,17 @@ public class CredentialsController {
 
 
 
+   /**
+    * this method will return the user
+    * @param credentialsDTO
+    * @return
+    * @throws UserNotFoundException
+    */
    @PostMapping(path = "/find", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Message> findUserName(@RequestBody CredentialsDTO credentialsDTO)
             throws UserNotFoundException {
         Credentials credential = new Credentials(credentialsDTO.getUserName(), credentialsDTO.getPassword());
+        logger.info("The method had called the service to find the user");
         return ResponseEntity.ok(credentialsService.findUserNameService(credential));
 
 
@@ -48,10 +58,17 @@ public class CredentialsController {
 
 
 
+   /**
+    * this method will update the user
+    * @param credentialsDTO
+    * @return
+    * @throws UserNotFoundException
+    */
    @PatchMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Message> updatePassword(@RequestBody CredentialsDTO credentialsDTO)
             throws UserNotFoundException {
         Credentials credential = new Credentials(credentialsDTO.getUserName(), credentialsDTO.getPassword());
+        logger.info("The method had called the service to update the user");
         return ResponseEntity.ok(credentialsService.updateUser(credential));
     }
 

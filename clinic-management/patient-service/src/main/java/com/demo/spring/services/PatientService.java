@@ -64,7 +64,7 @@ public class PatientService {
 			throw new PatientNotFoundException();
 		} else {
 			
-			logger.info("Patient Service: List the patients based on firstName");
+			logger.info("Patient Service - List the patients based on firstName");
 			return ResponseEntity.ok(patientList);
 		}
 

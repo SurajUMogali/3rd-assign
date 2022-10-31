@@ -9,65 +9,60 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name=&quot;DOCTOR_SPECIALITY&quot;)
-public class DoctorSpeciality{
-	
-	@Id
-    @SequenceGenerator(sequenceName = &quot;DoctorSpeciality_sequence&quot;,initialValue = 6, name = &quot;DoctorSpeciality_Id&quot;)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = &quot;DoctorSpeciality_Id&quot;)
-    
-    @Column(name=&quot;ID&quot;)
-    private int id;
+@Table(name = &quot;DOCTOR_SPECIALITY&quot;)
+public class DoctorSpeciality {
 
-	
-	@Column(name = &quot;DOCTOR_ID&quot;)
+	@Id
+	@SequenceGenerator(sequenceName = &quot;DoctorSpeciality_sequence&quot;, initialValue = 6, allocationSize = 1, name = &quot;DoctorSpeciality_Id&quot;)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = &quot;DoctorSpeciality_Id&quot;)
+
+	@Column(name = &quot;id&quot;)
+	private int id;
+
+	@Column(name = &quot;doctor_id&quot;)
 	private Integer doctorId;
-	
-	@Column(name = &quot;SPECIALITY_ID&quot;)
+
+	@Column(name = &quot;speciality_id&quot;)
 	private Integer specialityId;
 
-<span class="fc" id="L29">	public DoctorSpeciality() {</span>
-		
-<span class="fc" id="L31">	}</span>
+<span class="fc" id="L28">	public DoctorSpeciality() {</span>
 
-<span class="fc" id="L33">	public DoctorSpeciality(Integer doctorId, Integer specialityId) {</span>
-<span class="fc" id="L34">		this.doctorId = doctorId;</span>
-<span class="fc" id="L35">		this.specialityId = specialityId;</span>
-<span class="fc" id="L36">	}</span>
-	
-	
+<span class="fc" id="L30">	}</span>
 
-<span class="fc" id="L40">	public DoctorSpeciality(int id, Integer doctorId, Integer specialityId) {</span>
-<span class="fc" id="L41">		this.id = id;</span>
-<span class="fc" id="L42">		this.doctorId = doctorId;</span>
-<span class="fc" id="L43">		this.specialityId = specialityId;</span>
-<span class="fc" id="L44">	}</span>
+<span class="fc" id="L32">	public DoctorSpeciality(Integer doctorId, Integer specialityId) {</span>
+<span class="fc" id="L33">		this.doctorId = doctorId;</span>
+<span class="fc" id="L34">		this.specialityId = specialityId;</span>
+<span class="fc" id="L35">	}</span>
+
+<span class="fc" id="L37">	public DoctorSpeciality(int id, Integer doctorId, Integer specialityId) {</span>
+<span class="fc" id="L38">		this.id = id;</span>
+<span class="fc" id="L39">		this.doctorId = doctorId;</span>
+<span class="fc" id="L40">		this.specialityId = specialityId;</span>
+<span class="fc" id="L41">	}</span>
 
 	public Integer getDoctorId() {
-<span class="fc" id="L47">		return doctorId;</span>
+<span class="fc" id="L44">		return doctorId;</span>
 	}
 
 	public void setDoctorId(Integer doctorId) {
-<span class="fc" id="L51">		this.doctorId = doctorId;</span>
-<span class="fc" id="L52">	}</span>
+<span class="fc" id="L48">		this.doctorId = doctorId;</span>
+<span class="fc" id="L49">	}</span>
 
 	public Integer getSpecialityId() {
-<span class="fc" id="L55">		return specialityId;</span>
+<span class="fc" id="L52">		return specialityId;</span>
 	}
 
 	public void setSpecialityId(Integer specialityId) {
-<span class="fc" id="L59">		this.specialityId = specialityId;</span>
-<span class="fc" id="L60">	}</span>
+<span class="fc" id="L56">		this.specialityId = specialityId;</span>
+<span class="fc" id="L57">	}</span>
 
 	public int getId() {
-<span class="fc" id="L63">		return id;</span>
+<span class="fc" id="L60">		return id;</span>
 	}
 
 	public void setId(int id) {
-<span class="nc" id="L67">		this.id = id;</span>
-<span class="nc" id="L68">	}</span>
-	
-	
+<span class="nc" id="L64">		this.id = id;</span>
+<span class="nc" id="L65">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

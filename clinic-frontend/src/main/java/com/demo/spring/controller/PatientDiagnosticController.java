@@ -25,7 +25,7 @@ public class PatientDiagnosticController {
     
     @PostMapping(path = "/diagnostic/addDiagnosticPatient")
     public ModelAndView addDiagnosticToPatient(@RequestParam(name = "patientId", required = true) int patientId,@RequestParam(name = "diagnosticId", required = true) int diagnosticId) {
-    	PatientDiagnosticDTO patientDiagnosticDTO=new PatientDiagnosticDTO(patientId,diagnosticId);
+    	PatientDiagnosticDTO patientDiagnosticDTO=new PatientDiagnosticDTO(diagnosticId,patientId);
         
        
         ModelAndView mv = new ModelAndView();

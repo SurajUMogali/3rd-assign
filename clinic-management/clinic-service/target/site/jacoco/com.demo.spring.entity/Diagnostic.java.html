@@ -6,13 +6,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = &quot;DIAGNOSTIC&quot;)
+@Table(name = &quot;diagnostic&quot;)
 public class Diagnostic {
 
 	@Id
-	@Column(name = &quot;DIAGNOSTIC_ID&quot;)
+	@Column(name = &quot;diagnostic_id&quot;)
 	private Integer diagnosticId;
-	@Column(name = &quot;DIAGNOSTIC_NAME&quot;)
+	@Column(name = &quot;diagnostic_name&quot;)
 	private String diagnosticName;
 
 	public Diagnostic() {

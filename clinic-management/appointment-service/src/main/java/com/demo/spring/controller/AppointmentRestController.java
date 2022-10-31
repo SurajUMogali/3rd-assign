@@ -30,6 +30,9 @@ import com.demo.spring.util.ServerConfiguration;
 import io.micrometer.core.annotation.Timed;
 import io.swagger.v3.oas.annotations.OpenAPI30;
 
+
+
+
 @RestController
 @EnableConfigurationProperties(ServerConfiguration.class)
 @RequestMapping("/appointment")
@@ -73,25 +76,7 @@ public class AppointmentRestController {
 		return appointmentService.findAppointmentsByDateService(doctorID, date);
 	}
 
-//    @PostMapping(path = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<Message> savePatient(@RequestBody AppointmentDTO appointDTO) {
-//		if (appointmentRepo.existsById(appointDTO.getPatientId())) {
-//			return ResponseEntity.ok(new Message("Appointment already exists"));
-//		} else {
-//			Appointment appointment=new Appointment(appointDTO.getAppointmentId(),appointDTO.getPatientId(),appointDTO.getDoctorId(),
-//					appointDTO.getDate());
-//			appointmentRepo.save(appoint);
-//			return ResponseEntity.ok(new Message("Appointment taken"));
-//		}
-//
-//	}
 
-//	@PostMapping(path = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<Message> getAppointment(@RequestBody AppointmentDTO appointmentDTO) {
-//		return appointmentService.getAppointmentService(appointmentDTO);
-//
-//	}
-	
 	
 	@Autowired
 	RestTemplate restTemplate;

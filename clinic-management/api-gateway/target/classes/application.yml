@@ -13,4 +13,8 @@ spring:
       ddl-auto: update
   application:
     name: api-gateway
+    
+logging:
+  file:
+    name: api-gateway.log
 

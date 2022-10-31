@@ -39,9 +39,9 @@ public class DoctorSpecialityController {
 				String.class).getBody(); 
 		System.out.println(str);
 
-		if (str != null && str.equals("{\"status\":\"Speciality Not Found\"}")) {
+		if (str != null && str.equals("{\"status\":\"Doctor data is not available\"}")) {
 			mv.addObject("msg", "Speciality Not Found");
-			mv.setViewName("saveDoctorSpeciality");
+			mv.setViewName("savePatientfailure");
 		} else {
 			ResponseEntity<List<DoctorDTO>> response=restTemplate.exchange(
 					"http://localhost:8194/clinic/speciality/list/" + specialityId, HttpMethod.GET, request,

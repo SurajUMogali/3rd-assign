@@ -59,13 +59,12 @@ import com.demo.spring.repository.PatientRepository;
 	public ResponseEntity&lt;List&lt;Patient&gt;&gt; listByPatientNameService(String fname) throws PatientNotFoundException {
 <span class="fc" id="L60">		List&lt;Patient&gt; patientList = patientRepository.findAllByFirstName(fname);</span>
 <span class="pc bpc" id="L61" title="1 of 2 branches missed.">		if (patientList.isEmpty()) {</span>
-<span class="fc" id="L62">			logger.error(&quot;Patient Service: Exception : Patient Not Found Exception&quot;);</span>
+			
 			
 <span class="fc" id="L64">			throw new PatientNotFoundException();</span>
 		} else {
 			
-<span class="nc" id="L67">			logger.info(&quot;Patient Service: List the patients based on firstName&quot;);</span>
-<span class="nc" id="L68">			return ResponseEntity.ok(patientList);</span>
+<span class="nc" id="L67">			return ResponseEntity.ok(patientList);</span>
 		}
 
 	}

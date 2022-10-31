@@ -9,25 +9,26 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PATIENT_DIAGNOSTIC")
+@Table(name = "patient_diagnostic")
 public class PatientDiagnostic {
 
 	@Id
-	@SequenceGenerator(sequenceName = "PatientDiagnostic_sequence", initialValue = 5, name = "PatientDiagnostic_Id")
+	@SequenceGenerator(sequenceName = "PatientDiagnostic_sequence", initialValue = 5, allocationSize = 1, name = "PatientDiagnostic_Id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PatientDiagnostic_Id")
 
-	@Column(name = "ID")
+	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "DIAGNOSTIC_ID")
-	private Integer PatientID;
-	@Column(name = "PATIENT_ID")
+	@Column(name = "diagnostic_id")
 	private Integer DiagnosticID;
+
+	@Column(name = "patient_id")
+	private Integer PatientID;
 
 	public PatientDiagnostic() {
 	}
 
-	public PatientDiagnostic(Integer patientID, Integer diagnosticID) {
+	public PatientDiagnostic(Integer diagnosticID, Integer patientID) {
 		super();
 		PatientID = patientID;
 		DiagnosticID = diagnosticID;

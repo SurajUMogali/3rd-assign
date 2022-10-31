@@ -107,7 +107,7 @@ public class PatientRestController {
 	@PatchMapping(path = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Message> updatePatient(@RequestBody PatientDTO patientDto) {
 		if (patientRepository.existsById(patientDto.getPatientId())) {
-			logger.info("The method had called the service to upadte Patient Details");
+			logger.info("The method had called the service to update Patient Details");
 			Patient patient = new Patient(patientDto.getPatientId(), patientDto.getFirstName(),
 					patientDto.getLastName(), patientDto.getEmail());
 			patientRepository.save(patient);

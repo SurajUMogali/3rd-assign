@@ -9,33 +9,30 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="DOCTOR_SPECIALITY")
-public class DoctorSpeciality{
-	
-	@Id
-    @SequenceGenerator(sequenceName = "DoctorSpeciality_sequence",initialValue = 6, name = "DoctorSpeciality_Id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "DoctorSpeciality_Id")
-    
-    @Column(name="ID")
-    private int id;
+@Table(name = "DOCTOR_SPECIALITY")
+public class DoctorSpeciality {
 
-	
-	@Column(name = "DOCTOR_ID")
+	@Id
+	@SequenceGenerator(sequenceName = "DoctorSpeciality_sequence", initialValue = 6, allocationSize = 1, name = "DoctorSpeciality_Id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DoctorSpeciality_Id")
+
+	@Column(name = "id")
+	private int id;
+
+	@Column(name = "doctor_id")
 	private Integer doctorId;
-	
-	@Column(name = "SPECIALITY_ID")
+
+	@Column(name = "speciality_id")
 	private Integer specialityId;
 
 	public DoctorSpeciality() {
-		
+
 	}
 
 	public DoctorSpeciality(Integer doctorId, Integer specialityId) {
 		this.doctorId = doctorId;
 		this.specialityId = specialityId;
 	}
-	
-	
 
 	public DoctorSpeciality(int id, Integer doctorId, Integer specialityId) {
 		this.id = id;
@@ -66,7 +63,5 @@ public class DoctorSpeciality{
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
 
 }

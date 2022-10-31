@@ -11,7 +11,7 @@ public class PatientDiagnosticDTO {
 	public PatientDiagnosticDTO() {
 	}
 
-	public PatientDiagnosticDTO(Integer patientID, Integer diagnosticID) {
+	public PatientDiagnosticDTO(Integer diagnosticID, Integer patientID) {
 		super();
 		PatientID = patientID;
 		DiagnosticID = diagnosticID;

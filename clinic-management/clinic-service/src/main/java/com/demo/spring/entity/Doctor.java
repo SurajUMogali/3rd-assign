@@ -6,21 +6,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="DOCTOR")
+@Table(name = "doctor")
 public class Doctor {
 
 	@Id
-	@Column(name="DOCTOR_ID")
+	@Column(name = "doctor_id")
 	private Integer doctorId;
-	@Column(name="FIRST_NAME")
+	@Column(name = "first_name")
 	private String firstName;
-	@Column(name="LAST_NAME")
+	@Column(name = "last_name")
 	private String lastName;
-	@Column(name="EMAIL")
+	@Column(name = "email")
 	private String email;
 
 	public Doctor() {
-		
+
 	}
 
 	public Doctor(Integer doctorId, String firstName, String lastName, String email) {

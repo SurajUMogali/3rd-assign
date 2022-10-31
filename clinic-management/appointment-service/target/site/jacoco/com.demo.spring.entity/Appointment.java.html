@@ -6,19 +6,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = &quot;APPOINTMENT&quot;)
+@Table(name = &quot;appointment&quot;)
 public class Appointment {
 	@Id
-	@Column(name = &quot;APPOINTMENT_ID&quot;)
+	@Column(name = &quot;appointment_id&quot;)
 	private Integer appointmentId;
 
-	@Column(name = &quot;DOCTOR_ID&quot;)
+	@Column(name = &quot;doctor_id&quot;)
 	private Integer doctorId;
 
-	@Column(name = &quot;PATIENT_ID&quot;)
+	@Column(name = &quot;patient_id&quot;)
 	private Integer patientId;
 
-	@Column(name = &quot;DATE&quot;)
+	@Column(name = &quot;date&quot;)
 	private String date;
 
 	public Appointment() {

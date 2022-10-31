@@ -2,5 +2,5 @@ projectKey=com.demo:patient-service
 serverUrl=http://localhost:9099
 serverVersion=9.6.1.59531
 dashboardUrl=http://localhost:9099/dashboard?id=com.demo%3Apatient-service
-ceTaskId=AYQn-K7ykgHoo9fNKdPJ
-ceTaskUrl=http://localhost:9099/api/ce/task?id=AYQn-K7ykgHoo9fNKdPJ
+ceTaskId=AYQuG4llmksCn83mfkBc
+ceTaskUrl=http://localhost:9099/api/ce/task?id=AYQuG4llmksCn83mfkBc

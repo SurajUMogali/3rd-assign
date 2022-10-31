@@ -1,0 +1,273 @@
+2022-10-31 12:12:09.707  INFO 22032 --- [main] com.demo.spring.ApiGatewayApplication    : Starting ApiGatewayApplication using Java 17.0.3 on WKWIN9891521 with PID 22032 (C:\workspace4\clinic-management\api-gateway\target\classes started by surmogal in C:\workspace4\clinic-management\api-gateway)
+2022-10-31 12:12:09.711  INFO 22032 --- [main] com.demo.spring.ApiGatewayApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-10-31 12:12:11.521  INFO 22032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-31 12:12:11.822  INFO 22032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 286 ms. Found 1 JPA repository interfaces.
+2022-10-31 12:12:12.143  INFO 22032 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=050dba2d-0f86-3d32-a672-1a0c6a998d29
+2022-10-31 12:12:12.939  INFO 22032 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-31 12:12:13.043  INFO 22032 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-31 12:12:13.319  INFO 22032 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-31 12:12:13.526  INFO 22032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-31 12:12:14.174  INFO 22032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-31 12:12:14.233  INFO 22032 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-10-31 12:12:15.378  INFO 22032 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-31 12:12:15.391  INFO 22032 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-31 12:12:17.524  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-10-31 12:12:17.528  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-10-31 12:12:17.531  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-10-31 12:12:17.532  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-10-31 12:12:17.532  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-10-31 12:12:17.532  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-10-31 12:12:17.532  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-10-31 12:12:17.532  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-10-31 12:12:17.532  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-10-31 12:12:17.533  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-10-31 12:12:17.533  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-10-31 12:12:17.533  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-10-31 12:12:17.533  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-10-31 12:12:17.533  INFO 22032 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-10-31 12:12:19.552  INFO 22032 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-31 12:12:20.576  INFO 22032 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8194
+2022-10-31 12:12:21.802  INFO 22032 --- [main] com.demo.spring.ApiGatewayApplication    : Started ApiGatewayApplication in 13.343 seconds (JVM running for 14.824)
+2022-10-31 12:14:14.019  INFO 22032 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-31 12:14:14.049  INFO 22032 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-31 12:14:14.053  INFO 22032 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-31 12:14:14.111  INFO 22032 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-31 12:14:22.781  INFO 22052 --- [main] com.demo.spring.ApiGatewayApplication    : Starting ApiGatewayApplication using Java 17.0.3 on WKWIN9891521 with PID 22052 (C:\workspace4\clinic-management\api-gateway\target\classes started by surmogal in C:\workspace4\clinic-management\api-gateway)
+2022-10-31 12:14:23.276  INFO 22052 --- [main] com.demo.spring.ApiGatewayApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-10-31 12:14:26.765  INFO 22052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-31 12:14:27.446  INFO 22052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 638 ms. Found 1 JPA repository interfaces.
+2022-10-31 12:14:28.253  INFO 22052 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=050dba2d-0f86-3d32-a672-1a0c6a998d29
+2022-10-31 12:14:29.858  INFO 22052 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-31 12:14:30.131  INFO 22052 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-31 12:14:30.923  INFO 22052 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-31 12:14:31.535  INFO 22052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-31 12:14:33.094  INFO 22052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-31 12:14:33.165  INFO 22052 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-10-31 12:14:35.328  INFO 22052 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-31 12:14:35.342  INFO 22052 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-31 12:14:40.212  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-10-31 12:14:40.223  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-10-31 12:14:40.223  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-10-31 12:14:40.224  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-10-31 12:14:40.224  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-10-31 12:14:40.224  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-10-31 12:14:40.225  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-10-31 12:14:40.225  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-10-31 12:14:40.225  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-10-31 12:14:40.225  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-10-31 12:14:40.225  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-10-31 12:14:40.226  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-10-31 12:14:40.226  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-10-31 12:14:40.226  INFO 22052 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-10-31 12:14:44.660  INFO 22052 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-31 12:14:46.788  INFO 22052 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8194
+2022-10-31 12:14:50.857  INFO 22052 --- [main] com.demo.spring.ApiGatewayApplication    : Started ApiGatewayApplication in 30.068 seconds (JVM running for 32.594)
+2022-10-31 12:16:54.491  INFO 22052 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 12:16:54.578  INFO 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 12:16:54.578 ERROR 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Exception :User Not Found Exception
+2022-10-31 12:17:00.969  INFO 22052 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 12:17:00.993  INFO 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 13:36:11.249  INFO 22052 --- [reactor-http-nio-7] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 13:36:11.258  INFO 22052 --- [reactor-http-nio-7] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 14:31:31.727  INFO 22052 --- [reactor-http-nio-1] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 14:31:31.752  INFO 22052 --- [reactor-http-nio-1] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 14:31:51.159  INFO 22052 --- [reactor-http-nio-1] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 14:31:51.167  INFO 22052 --- [reactor-http-nio-1] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 14:31:54.931  INFO 22052 --- [reactor-http-nio-1] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 14:31:54.937  INFO 22052 --- [reactor-http-nio-1] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 14:36:57.631  INFO 22052 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 14:36:57.642  INFO 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 14:50:30.809  INFO 22052 --- [reactor-http-nio-6] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 14:50:30.828  INFO 22052 --- [reactor-http-nio-6] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 14:55:36.650  INFO 22052 --- [reactor-http-nio-7] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 14:55:36.658  INFO 22052 --- [reactor-http-nio-7] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 14:57:17.063  INFO 22052 --- [reactor-http-nio-8] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 14:57:17.068  INFO 22052 --- [reactor-http-nio-8] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:10:19.123  INFO 22052 --- [reactor-http-nio-1] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:10:19.130  INFO 22052 --- [reactor-http-nio-1] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:10:47.810  INFO 22052 --- [reactor-http-nio-1] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:10:47.815  INFO 22052 --- [reactor-http-nio-1] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:22:27.224  INFO 22052 --- [reactor-http-nio-1] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:22:27.231  INFO 22052 --- [reactor-http-nio-1] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:22:52.201  INFO 22052 --- [reactor-http-nio-1] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:22:52.205  INFO 22052 --- [reactor-http-nio-1] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:24:29.202  INFO 22052 --- [reactor-http-nio-3] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:24:29.208  INFO 22052 --- [reactor-http-nio-3] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:24:36.268  INFO 22052 --- [reactor-http-nio-3] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:24:36.273  INFO 22052 --- [reactor-http-nio-3] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:31:26.752  INFO 22052 --- [reactor-http-nio-5] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:31:26.761  INFO 22052 --- [reactor-http-nio-5] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:31:31.762  INFO 22052 --- [reactor-http-nio-5] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:31:31.767  INFO 22052 --- [reactor-http-nio-5] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:33:35.089  INFO 22052 --- [reactor-http-nio-5] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:33:35.104  INFO 22052 --- [reactor-http-nio-5] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:39:09.027  INFO 22052 --- [reactor-http-nio-7] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:39:09.040  INFO 22052 --- [reactor-http-nio-7] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:43:32.220  INFO 22052 --- [reactor-http-nio-8] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:43:32.225  INFO 22052 --- [reactor-http-nio-8] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:43:35.790  INFO 22052 --- [reactor-http-nio-8] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:43:35.801  INFO 22052 --- [reactor-http-nio-8] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:44:44.812  INFO 22052 --- [reactor-http-nio-8] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:44:44.819  INFO 22052 --- [reactor-http-nio-8] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 15:44:54.378  INFO 22052 --- [reactor-http-nio-8] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 15:44:54.384  INFO 22052 --- [reactor-http-nio-8] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 18:35:52.888  INFO 22052 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 18:35:53.109  INFO 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 18:44:49.897  INFO 22052 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 18:44:49.917  INFO 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 19:15:08.224  INFO 22052 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 19:15:08.233  INFO 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 19:15:15.137  INFO 22052 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 19:15:15.145  INFO 22052 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 19:48:18.058  INFO 22052 --- [RMI TCP Connection(562)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-31 19:48:18.686  INFO 22052 --- [RMI TCP Connection(562)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-31 19:48:18.775  INFO 22052 --- [RMI TCP Connection(562)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-31 19:48:18.872  INFO 22052 --- [RMI TCP Connection(562)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-31 19:53:08.485  INFO 4848 --- [main] com.demo.spring.ApiGatewayApplication    : Starting ApiGatewayApplication using Java 17.0.3 on WKWIN9891521 with PID 4848 (C:\workspace4\clinic-management\api-gateway\target\classes started by surmogal in C:\workspace4\clinic-management\api-gateway)
+2022-10-31 19:53:08.493  INFO 4848 --- [main] com.demo.spring.ApiGatewayApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-10-31 19:53:12.204  INFO 4848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-31 19:53:12.812  INFO 4848 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 544 ms. Found 1 JPA repository interfaces.
+2022-10-31 19:53:13.254  INFO 4848 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=050dba2d-0f86-3d32-a672-1a0c6a998d29
+2022-10-31 19:53:14.935  INFO 4848 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-31 19:53:15.164  INFO 4848 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-31 19:53:15.683  INFO 4848 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-31 19:53:16.077  INFO 4848 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-31 19:53:17.052  INFO 4848 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-31 19:53:17.150  INFO 4848 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-10-31 19:53:19.290  INFO 4848 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-31 19:53:19.310  INFO 4848 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-31 19:53:22.839  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-10-31 19:53:22.841  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-10-31 19:53:22.842  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-10-31 19:53:22.843  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-10-31 19:53:22.843  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-10-31 19:53:22.843  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-10-31 19:53:22.843  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-10-31 19:53:22.844  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-10-31 19:53:22.844  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-10-31 19:53:22.844  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-10-31 19:53:22.844  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-10-31 19:53:22.844  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-10-31 19:53:22.845  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-10-31 19:53:22.850  INFO 4848 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-10-31 19:53:25.573  INFO 4848 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-31 19:53:27.234  INFO 4848 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8194
+2022-10-31 19:53:29.072  INFO 4848 --- [main] com.demo.spring.ApiGatewayApplication    : Started ApiGatewayApplication in 22.822 seconds (JVM running for 25.01)
+2022-10-31 19:54:27.180  INFO 4848 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 19:54:27.313  INFO 4848 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 19:54:31.690  INFO 4848 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 19:54:31.695  INFO 4848 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 19:57:57.713 ERROR 4848 --- [reactor-http-nio-3] a.w.r.e.AbstractErrorWebExceptionHandler : [5b47b99f-5]  500 Server Error for HTTP GET "/patient/201"
+
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:8191
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/patient/201" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-10-31 19:58:04.229 ERROR 4848 --- [reactor-http-nio-4] a.w.r.e.AbstractErrorWebExceptionHandler : [4a1df01d-7]  500 Server Error for HTTP GET "/patient/201"
+
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:8191
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/patient/201" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-10-31 19:58:16.711 ERROR 4848 --- [reactor-http-nio-5] a.w.r.e.AbstractErrorWebExceptionHandler : [559c36cc-9]  500 Server Error for HTTP GET "/patient/201"
+
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:8191
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/patient/201" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-10-31 19:58:33.962 ERROR 4848 --- [reactor-http-nio-6] a.w.r.e.AbstractErrorWebExceptionHandler : [9b6efee4-11]  500 Server Error for HTTP GET "/patient/201"
+
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:8191
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/patient/201" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.82.Final.jar:4.1.82.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-10-31 20:02:50.552  INFO 4848 --- [reactor-http-nio-7] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 20:02:50.560  INFO 4848 --- [reactor-http-nio-7] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 20:14:27.908  INFO 4848 --- [reactor-http-nio-4] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 20:14:27.915  INFO 4848 --- [reactor-http-nio-4] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 20:15:18.131  INFO 4848 --- [reactor-http-nio-5] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 20:15:18.137  INFO 4848 --- [reactor-http-nio-5] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 20:15:27.462  INFO 4848 --- [reactor-http-nio-5] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 20:15:27.470  INFO 4848 --- [reactor-http-nio-5] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 20:41:54.911  INFO 4848 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 20:41:54.932  INFO 4848 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 20:41:59.047  INFO 4848 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 20:41:59.052  INFO 4848 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 20:42:08.307  INFO 4848 --- [reactor-http-nio-2] c.d.s.controller.CredentialsController   : The method had called the service to find the user
+2022-10-31 20:42:08.310  INFO 4848 --- [reactor-http-nio-2] c.d.spring.services.CredentialsService   : Credential Service: Find the user 
+2022-10-31 21:03:00.345  INFO 4848 --- [RMI TCP Connection(92)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-31 21:03:00.380  INFO 4848 --- [RMI TCP Connection(92)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-31 21:03:00.388  INFO 4848 --- [RMI TCP Connection(92)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-31 21:03:00.439  INFO 4848 --- [RMI TCP Connection(92)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
