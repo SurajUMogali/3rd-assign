@@ -24,6 +24,7 @@ import com.demo.spring.entity.Message;
 import com.demo.spring.exception.AppointmentNotFoundException;
 import com.demo.spring.exceptions.DoctorNotFoundException;
 import com.demo.spring.exceptions.PatientNotExistsException;
+import com.demo.spring.exceptions.PatientNotFoundException;
 import com.demo.spring.services.AppointmentService;
 import com.demo.spring.util.ServerConfiguration;
 
@@ -92,8 +93,7 @@ public class AppointmentRestController {
 	 * @throws DoctorNotFoundException
 	 * @throws NullPointerException
 	 */
-
-
+	
 	@PostMapping(path = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@Timed(value = "request.add.appointment")
 	public ResponseEntity<Message> addAppointment(@RequestBody AppointmentDTO appointmentDTO)
@@ -101,12 +101,12 @@ public class AppointmentRestController {
 		
 		logger.info("This method had called the service to save appointments");
 		
-		PatientDTO patientDTO = restTemplate.getForEntity(server.getPatientServer() + "/patient/{id}", PatientDTO.class,
+		PatientDTO patientDTO = restTemplate.getForEntity("http://patient-service/patient/{id}", PatientDTO.class,
 				appointmentDTO.getPatientId()).getBody();
 
 		if (patientDTO != null && patientDTO.getPatientId() != null
 				&& patientDTO.getPatientId().equals(appointmentDTO.getPatientId())) {
-			DoctorDTO doctorDTO = restTemplate.getForEntity(server.getClinicServer() + "/clinic/doctor/find/{doctorId}",
+			DoctorDTO doctorDTO = restTemplate.getForEntity("http://clinic-service/clinic/doctor/find/{doctorId}",
 					DoctorDTO.class, appointmentDTO.getDoctorId()).getBody();
 
 			if (doctorDTO != null && doctorDTO.getDoctorId() != null
@@ -123,5 +123,10 @@ public class AppointmentRestController {
 		}
 
 	}
+
+
+	
+	
+	
 
 }

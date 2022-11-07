@@ -50,7 +50,7 @@ public class PatientDiagnosticRestController {
 			@PathVariable("patientId") int patientId)
 			throws PatientNotFoundException, DiagnosticNotFoundException, NullPointerException {
 		PatientDTO patientDTO = restTemplate
-				.getForEntity(server.getPatientServer() + "/patient/{patientId}", PatientDTO.class, patientId)
+				.getForEntity("http://patient-service/patient/{patientId}", PatientDTO.class, patientId)
 				.getBody();
 		if (patientDTO!=null && patientDTO.getPatientId() != null && patientDTO.getPatientId() == patientId) {
 			logger.info("The method had called the service to to save the diagnosticTest to patient");

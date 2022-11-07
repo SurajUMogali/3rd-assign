@@ -74,10 +74,7 @@ public class PatientRestController {
 
 	}
 
-//	@GetMapping(path = "/list/{fname}", produces = MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<List<Patient>> getAllByfName(@PathVariable("fname") String fname) {
-//		return ResponseEntity.ok(patientRepository.findAllByFirstName(fname));
-//	}
+
 	
 	
 	/**

@@ -5,14 +5,23 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.demo.spring.dto.AppointmentDTO;
+import com.demo.spring.dto.DoctorDTO;
+import com.demo.spring.dto.PatientDTO;
 import com.demo.spring.entity.Appointment;
 import com.demo.spring.entity.Message;
 import com.demo.spring.exception.AppointmentNotFoundException;
+import com.demo.spring.exceptions.DoctorNotFoundException;
+import com.demo.spring.exceptions.PatientNotFoundException;
 import com.demo.spring.repository.AppointmentRepository;
+
+import io.micrometer.core.annotation.Timed;
 
 @Service
 public class AppointmentService {
@@ -55,7 +64,11 @@ public class AppointmentService {
 	}
 	
 	
-	
+    
+
+
+
+}	
 	
 
-}
+

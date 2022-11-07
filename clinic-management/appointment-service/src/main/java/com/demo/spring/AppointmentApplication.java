@@ -27,6 +27,7 @@ public class AppointmentApplication {
 	}
 
 	@Bean
+	@LoadBalanced
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}

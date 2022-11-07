@@ -3,9 +3,10 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: root
-    url: jdbc:mysql://localhost:3307/patientdb
-    username: root
+    password:  ${DB_PASSWORD:root}
+    url: ${JDBC_URL:jdbc:mysql://localhost:3307/patientdb}
+    username: ${DB_USER:root}
+    
   application:
     name: patient-service
     
